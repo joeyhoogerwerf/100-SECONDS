@@ -1,4 +1,5 @@
 import { App } from "./../App";
+import { IScreen } from "./IScreen";
 import { CollisionListener } from "./../CollisionListener";
 import { Player } from "./../Player";
 import { Block } from "./../Block";
@@ -8,7 +9,7 @@ import { InputHandler } from "./../InputHandler";
 import { Score } from "./../Score";
 import * as box2d from "./../Box2D/Box2D";
 
-export class GameScreen {
+export class GameScreen implements IScreen {
     private _app: App;
 
     private _canvas: HTMLCanvasElement;

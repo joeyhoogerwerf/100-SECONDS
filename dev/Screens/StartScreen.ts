@@ -1,8 +1,9 @@
 import { App } from "./../App";
 import { GameScreen } from "./GameScreen";
+import { IScreen } from "./IScreen";
 import { Screens } from "./../App";
 
-export class StartScreen {
+export class StartScreen implements IScreen {
 
     private _app:App;
 
@@ -10,8 +11,8 @@ export class StartScreen {
         this._app = app;
 
         document.addEventListener('keydown', (e:KeyboardEvent) => {
-            if (this._app.activeScreen == Screens.START) {
-                // console.log(e.keyCode);
+            if (this._app.activeScreen == this) {
+                console.log('9090');
                 if (e.keyCode == 32) {
                     console.log();
                     

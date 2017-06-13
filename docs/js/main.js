@@ -8,9 +8,18 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-System.register("Box2D/Common/b2Settings", [], function (exports_1, context_1) {
+System.register("Screens/IScreen", [], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
+    return {
+        setters: [],
+        execute: function () {
+        }
+    };
+});
+System.register("Box2D/Common/b2Settings", [], function (exports_2, context_2) {
+    "use strict";
+    var __moduleName = context_2 && context_2.id;
     function b2Assert(condition) {
         var args = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -20,29 +29,29 @@ System.register("Box2D/Common/b2Settings", [], function (exports_1, context_1) {
             debugger;
         }
     }
-    exports_1("b2Assert", b2Assert);
+    exports_2("b2Assert", b2Assert);
     function b2Alloc(size) {
         return null;
     }
-    exports_1("b2Alloc", b2Alloc);
+    exports_2("b2Alloc", b2Alloc);
     function b2Free(mem) {
     }
-    exports_1("b2Free", b2Free);
+    exports_2("b2Free", b2Free);
     function b2Log(message) {
         var args = [];
         for (var _i = 1; _i < arguments.length; _i++) {
             args[_i - 1] = arguments[_i];
         }
     }
-    exports_1("b2Log", b2Log);
+    exports_2("b2Log", b2Log);
     function b2ParseInt(v) {
         return parseInt(v, 10);
     }
-    exports_1("b2ParseInt", b2ParseInt);
+    exports_2("b2ParseInt", b2ParseInt);
     function b2ParseUInt(v) {
         return Math.abs(parseInt(v, 10));
     }
-    exports_1("b2ParseUInt", b2ParseUInt);
+    exports_2("b2ParseUInt", b2ParseUInt);
     function b2MakeArray(length, init) {
         var a = [];
         for (var i = 0; i < length; ++i) {
@@ -50,7 +59,7 @@ System.register("Box2D/Common/b2Settings", [], function (exports_1, context_1) {
         }
         return a;
     }
-    exports_1("b2MakeArray", b2MakeArray);
+    exports_2("b2MakeArray", b2MakeArray);
     function b2MakeNullArray(length) {
         var a = [];
         for (var i = 0; i < length; ++i) {
@@ -58,7 +67,7 @@ System.register("Box2D/Common/b2Settings", [], function (exports_1, context_1) {
         }
         return a;
     }
-    exports_1("b2MakeNullArray", b2MakeNullArray);
+    exports_2("b2MakeNullArray", b2MakeNullArray);
     function b2MakeNumberArray(length, init) {
         if (init === void 0) { init = 0; }
         var a = [];
@@ -67,46 +76,46 @@ System.register("Box2D/Common/b2Settings", [], function (exports_1, context_1) {
         }
         return a;
     }
-    exports_1("b2MakeNumberArray", b2MakeNumberArray);
+    exports_2("b2MakeNumberArray", b2MakeNumberArray);
     var b2_maxFloat, b2_epsilon, b2_epsilon_sq, b2_pi, b2_maxManifoldPoints, b2_maxPolygonVertices, b2_aabbExtension, b2_aabbMultiplier, b2_linearSlop, b2_angularSlop, b2_polygonRadius, b2_maxSubSteps, b2_maxTOIContacts, b2_velocityThreshold, b2_maxLinearCorrection, b2_maxAngularCorrection, b2_maxTranslation, b2_maxTranslationSquared, b2_maxRotation, b2_maxRotationSquared, b2_baumgarte, b2_toiBaumgarte, b2_invalidParticleIndex, b2_maxParticleIndex, b2_particleStride, b2_minParticleWeight, b2_maxParticlePressure, b2_maxParticleForce, b2_maxTriadDistance, b2_maxTriadDistanceSquared, b2_minParticleSystemBufferCapacity, b2_barrierCollisionTime, b2_timeToSleep, b2_linearSleepTolerance, b2_angularSleepTolerance, b2Version, b2_version, b2_changelist;
     return {
         setters: [],
         execute: function () {
-            exports_1("b2_maxFloat", b2_maxFloat = 1E+37);
-            exports_1("b2_epsilon", b2_epsilon = 1E-5);
-            exports_1("b2_epsilon_sq", b2_epsilon_sq = (b2_epsilon * b2_epsilon));
-            exports_1("b2_pi", b2_pi = 3.14159265359);
-            exports_1("b2_maxManifoldPoints", b2_maxManifoldPoints = 2);
-            exports_1("b2_maxPolygonVertices", b2_maxPolygonVertices = 8);
-            exports_1("b2_aabbExtension", b2_aabbExtension = 0.1);
-            exports_1("b2_aabbMultiplier", b2_aabbMultiplier = 2);
-            exports_1("b2_linearSlop", b2_linearSlop = 0.008);
-            exports_1("b2_angularSlop", b2_angularSlop = 2 / 180 * b2_pi);
-            exports_1("b2_polygonRadius", b2_polygonRadius = 2 * b2_linearSlop);
-            exports_1("b2_maxSubSteps", b2_maxSubSteps = 8);
-            exports_1("b2_maxTOIContacts", b2_maxTOIContacts = 32);
-            exports_1("b2_velocityThreshold", b2_velocityThreshold = 1);
-            exports_1("b2_maxLinearCorrection", b2_maxLinearCorrection = 0.2);
-            exports_1("b2_maxAngularCorrection", b2_maxAngularCorrection = 8 / 180 * b2_pi);
-            exports_1("b2_maxTranslation", b2_maxTranslation = 2);
-            exports_1("b2_maxTranslationSquared", b2_maxTranslationSquared = b2_maxTranslation * b2_maxTranslation);
-            exports_1("b2_maxRotation", b2_maxRotation = 0.5 * b2_pi);
-            exports_1("b2_maxRotationSquared", b2_maxRotationSquared = b2_maxRotation * b2_maxRotation);
-            exports_1("b2_baumgarte", b2_baumgarte = 0.2);
-            exports_1("b2_toiBaumgarte", b2_toiBaumgarte = 0.75);
-            exports_1("b2_invalidParticleIndex", b2_invalidParticleIndex = -1);
-            exports_1("b2_maxParticleIndex", b2_maxParticleIndex = 0x7FFFFFFF);
-            exports_1("b2_particleStride", b2_particleStride = 0.75);
-            exports_1("b2_minParticleWeight", b2_minParticleWeight = 1.0);
-            exports_1("b2_maxParticlePressure", b2_maxParticlePressure = 0.25);
-            exports_1("b2_maxParticleForce", b2_maxParticleForce = 0.5);
-            exports_1("b2_maxTriadDistance", b2_maxTriadDistance = 2.0);
-            exports_1("b2_maxTriadDistanceSquared", b2_maxTriadDistanceSquared = (b2_maxTriadDistance * b2_maxTriadDistance));
-            exports_1("b2_minParticleSystemBufferCapacity", b2_minParticleSystemBufferCapacity = 256);
-            exports_1("b2_barrierCollisionTime", b2_barrierCollisionTime = 2.5);
-            exports_1("b2_timeToSleep", b2_timeToSleep = 0.5);
-            exports_1("b2_linearSleepTolerance", b2_linearSleepTolerance = 0.01);
-            exports_1("b2_angularSleepTolerance", b2_angularSleepTolerance = 2 / 180 * b2_pi);
+            exports_2("b2_maxFloat", b2_maxFloat = 1E+37);
+            exports_2("b2_epsilon", b2_epsilon = 1E-5);
+            exports_2("b2_epsilon_sq", b2_epsilon_sq = (b2_epsilon * b2_epsilon));
+            exports_2("b2_pi", b2_pi = 3.14159265359);
+            exports_2("b2_maxManifoldPoints", b2_maxManifoldPoints = 2);
+            exports_2("b2_maxPolygonVertices", b2_maxPolygonVertices = 8);
+            exports_2("b2_aabbExtension", b2_aabbExtension = 0.1);
+            exports_2("b2_aabbMultiplier", b2_aabbMultiplier = 2);
+            exports_2("b2_linearSlop", b2_linearSlop = 0.008);
+            exports_2("b2_angularSlop", b2_angularSlop = 2 / 180 * b2_pi);
+            exports_2("b2_polygonRadius", b2_polygonRadius = 2 * b2_linearSlop);
+            exports_2("b2_maxSubSteps", b2_maxSubSteps = 8);
+            exports_2("b2_maxTOIContacts", b2_maxTOIContacts = 32);
+            exports_2("b2_velocityThreshold", b2_velocityThreshold = 1);
+            exports_2("b2_maxLinearCorrection", b2_maxLinearCorrection = 0.2);
+            exports_2("b2_maxAngularCorrection", b2_maxAngularCorrection = 8 / 180 * b2_pi);
+            exports_2("b2_maxTranslation", b2_maxTranslation = 2);
+            exports_2("b2_maxTranslationSquared", b2_maxTranslationSquared = b2_maxTranslation * b2_maxTranslation);
+            exports_2("b2_maxRotation", b2_maxRotation = 0.5 * b2_pi);
+            exports_2("b2_maxRotationSquared", b2_maxRotationSquared = b2_maxRotation * b2_maxRotation);
+            exports_2("b2_baumgarte", b2_baumgarte = 0.2);
+            exports_2("b2_toiBaumgarte", b2_toiBaumgarte = 0.75);
+            exports_2("b2_invalidParticleIndex", b2_invalidParticleIndex = -1);
+            exports_2("b2_maxParticleIndex", b2_maxParticleIndex = 0x7FFFFFFF);
+            exports_2("b2_particleStride", b2_particleStride = 0.75);
+            exports_2("b2_minParticleWeight", b2_minParticleWeight = 1.0);
+            exports_2("b2_maxParticlePressure", b2_maxParticlePressure = 0.25);
+            exports_2("b2_maxParticleForce", b2_maxParticleForce = 0.5);
+            exports_2("b2_maxTriadDistance", b2_maxTriadDistance = 2.0);
+            exports_2("b2_maxTriadDistanceSquared", b2_maxTriadDistanceSquared = (b2_maxTriadDistance * b2_maxTriadDistance));
+            exports_2("b2_minParticleSystemBufferCapacity", b2_minParticleSystemBufferCapacity = 256);
+            exports_2("b2_barrierCollisionTime", b2_barrierCollisionTime = 2.5);
+            exports_2("b2_timeToSleep", b2_timeToSleep = 0.5);
+            exports_2("b2_linearSleepTolerance", b2_linearSleepTolerance = 0.01);
+            exports_2("b2_angularSleepTolerance", b2_angularSleepTolerance = 2 / 180 * b2_pi);
             b2Version = (function () {
                 function b2Version(major, minor, revision) {
                     if (major === void 0) { major = 0; }
@@ -124,85 +133,85 @@ System.register("Box2D/Common/b2Settings", [], function (exports_1, context_1) {
                 };
                 return b2Version;
             }());
-            exports_1("b2Version", b2Version);
-            exports_1("b2_version", b2_version = new b2Version(2, 3, 2));
-            exports_1("b2_changelist", b2_changelist = 313);
+            exports_2("b2Version", b2Version);
+            exports_2("b2_version", b2_version = new b2Version(2, 3, 2));
+            exports_2("b2_changelist", b2_changelist = 313);
         }
     };
 });
-System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (exports_2, context_2) {
+System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (exports_3, context_3) {
     "use strict";
-    var __moduleName = context_2 && context_2.id;
+    var __moduleName = context_3 && context_3.id;
     function b2Abs(n) {
         return (n < 0) ? (-n) : (n);
     }
-    exports_2("b2Abs", b2Abs);
+    exports_3("b2Abs", b2Abs);
     function b2Min(a, b) {
         return (a < b) ? (a) : (b);
     }
-    exports_2("b2Min", b2Min);
+    exports_3("b2Min", b2Min);
     function b2Max(a, b) {
         return (a > b) ? (a) : (b);
     }
-    exports_2("b2Max", b2Max);
+    exports_3("b2Max", b2Max);
     function b2Clamp(a, lo, hi) {
         return (a < lo) ? (lo) : ((a > hi) ? (hi) : (a));
     }
-    exports_2("b2Clamp", b2Clamp);
+    exports_3("b2Clamp", b2Clamp);
     function b2Swap(a, b) {
         var tmp = a[0];
         a[0] = b[0];
         b[0] = tmp;
     }
-    exports_2("b2Swap", b2Swap);
+    exports_3("b2Swap", b2Swap);
     function b2IsValid(n) {
         return isFinite(n);
     }
-    exports_2("b2IsValid", b2IsValid);
+    exports_3("b2IsValid", b2IsValid);
     function b2Sq(n) {
         return n * n;
     }
-    exports_2("b2Sq", b2Sq);
+    exports_3("b2Sq", b2Sq);
     function b2InvSqrt(n) {
         return 1 / Math.sqrt(n);
     }
-    exports_2("b2InvSqrt", b2InvSqrt);
+    exports_3("b2InvSqrt", b2InvSqrt);
     function b2Sqrt(n) {
         return Math.sqrt(n);
     }
-    exports_2("b2Sqrt", b2Sqrt);
+    exports_3("b2Sqrt", b2Sqrt);
     function b2Pow(x, y) {
         return Math.pow(x, y);
     }
-    exports_2("b2Pow", b2Pow);
+    exports_3("b2Pow", b2Pow);
     function b2DegToRad(degrees) {
         return degrees * b2_pi_over_180;
     }
-    exports_2("b2DegToRad", b2DegToRad);
+    exports_3("b2DegToRad", b2DegToRad);
     function b2RadToDeg(radians) {
         return radians * b2_180_over_pi;
     }
-    exports_2("b2RadToDeg", b2RadToDeg);
+    exports_3("b2RadToDeg", b2RadToDeg);
     function b2Cos(radians) {
         return Math.cos(radians);
     }
-    exports_2("b2Cos", b2Cos);
+    exports_3("b2Cos", b2Cos);
     function b2Sin(radians) {
         return Math.sin(radians);
     }
-    exports_2("b2Sin", b2Sin);
+    exports_3("b2Sin", b2Sin);
     function b2Acos(n) {
         return Math.acos(n);
     }
-    exports_2("b2Acos", b2Acos);
+    exports_3("b2Acos", b2Acos);
     function b2Asin(n) {
         return Math.asin(n);
     }
-    exports_2("b2Asin", b2Asin);
+    exports_3("b2Asin", b2Asin);
     function b2Atan2(y, x) {
         return Math.atan2(y, x);
     }
-    exports_2("b2Atan2", b2Atan2);
+    exports_3("b2Atan2", b2Atan2);
     function b2NextPowerOfTwo(x) {
         x |= (x >> 1) & 0x7FFFFFFF;
         x |= (x >> 2) & 0x3FFFFFFF;
@@ -211,19 +220,19 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
         x |= (x >> 16) & 0x0000FFFF;
         return x + 1;
     }
-    exports_2("b2NextPowerOfTwo", b2NextPowerOfTwo);
+    exports_3("b2NextPowerOfTwo", b2NextPowerOfTwo);
     function b2IsPowerOfTwo(x) {
         return x > 0 && (x & (x - 1)) === 0;
     }
-    exports_2("b2IsPowerOfTwo", b2IsPowerOfTwo);
+    exports_3("b2IsPowerOfTwo", b2IsPowerOfTwo);
     function b2Random() {
         return Math.random() * 2 - 1;
     }
-    exports_2("b2Random", b2Random);
+    exports_3("b2Random", b2Random);
     function b2RandomRange(lo, hi) {
         return (hi - lo) * Math.random() + lo;
     }
-    exports_2("b2RandomRange", b2RandomRange);
+    exports_3("b2RandomRange", b2RandomRange);
     function b2AbsV(v, out) {
         out.x = b2Abs(v.x);
         out.y = b2Abs(v.y);
@@ -459,9 +468,9 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
             }
         ],
         execute: function () {
-            exports_2("b2_pi_over_180", b2_pi_over_180 = b2Settings_1.b2_pi / 180);
-            exports_2("b2_180_over_pi", b2_180_over_pi = 180 / b2Settings_1.b2_pi);
-            exports_2("b2_two_pi", b2_two_pi = 2 * b2Settings_1.b2_pi);
+            exports_3("b2_pi_over_180", b2_pi_over_180 = b2Settings_1.b2_pi / 180);
+            exports_3("b2_180_over_pi", b2_180_over_pi = 180 / b2Settings_1.b2_pi);
+            exports_3("b2_two_pi", b2_two_pi = 2 * b2Settings_1.b2_pi);
             b2Vec2 = (function () {
                 function b2Vec2(x, y) {
                     if (x === void 0) { x = 0; }
@@ -639,8 +648,8 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
             b2Vec2.s_t1 = new b2Vec2();
             b2Vec2.s_t2 = new b2Vec2();
             b2Vec2.s_t3 = new b2Vec2();
-            exports_2("b2Vec2", b2Vec2);
-            exports_2("b2Vec2_zero", b2Vec2_zero = new b2Vec2(0, 0));
+            exports_3("b2Vec2", b2Vec2);
+            exports_3("b2Vec2_zero", b2Vec2_zero = new b2Vec2(0, 0));
             b2Vec3 = (function () {
                 function b2Vec3(x, y, z) {
                     if (x === void 0) { x = 0; }
@@ -713,7 +722,7 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
             }());
             b2Vec3.ZERO = new b2Vec3(0, 0, 0);
             b2Vec3.s_t0 = new b2Vec3();
-            exports_2("b2Vec3", b2Vec3);
+            exports_3("b2Vec3", b2Vec3);
             b2Mat22 = (function () {
                 function b2Mat22() {
                     this.ex = new b2Vec2(1, 0);
@@ -819,7 +828,7 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
                 return b2Mat22;
             }());
             b2Mat22.IDENTITY = new b2Mat22();
-            exports_2("b2Mat22", b2Mat22);
+            exports_3("b2Mat22", b2Mat22);
             b2Mat33 = (function () {
                 function b2Mat33() {
                     this.ex = new b2Vec3(1, 0, 0);
@@ -924,7 +933,7 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
                 return b2Mat33;
             }());
             b2Mat33.IDENTITY = new b2Mat33();
-            exports_2("b2Mat33", b2Mat33);
+            exports_3("b2Mat33", b2Mat33);
             b2Rot = (function () {
                 function b2Rot(angle) {
                     if (angle === void 0) { angle = 0; }
@@ -973,7 +982,7 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
                 return b2Rot;
             }());
             b2Rot.IDENTITY = new b2Rot();
-            exports_2("b2Rot", b2Rot);
+            exports_3("b2Rot", b2Rot);
             b2Transform = (function () {
                 function b2Transform() {
                     this.p = new b2Vec2();
@@ -1037,7 +1046,7 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
                 return b2Transform;
             }());
             b2Transform.IDENTITY = new b2Transform();
-            exports_2("b2Transform", b2Transform);
+            exports_3("b2Transform", b2Transform);
             b2Sweep = (function () {
                 function b2Sweep() {
                     this.localCenter = new b2Vec2();
@@ -1083,13 +1092,13 @@ System.register("Box2D/Common/b2Math", ["Box2D/Common/b2Settings"], function (ex
                 };
                 return b2Sweep;
             }());
-            exports_2("b2Sweep", b2Sweep);
+            exports_3("b2Sweep", b2Sweep);
         }
     };
 });
-System.register("Box2D/Common/b2Draw", [], function (exports_3, context_3) {
+System.register("Box2D/Common/b2Draw", [], function (exports_4, context_4) {
     "use strict";
-    var __moduleName = context_3 && context_3.id;
+    var __moduleName = context_4 && context_4.id;
     var b2Color, b2Draw;
     return {
         setters: [],
@@ -1231,7 +1240,7 @@ System.register("Box2D/Common/b2Draw", [], function (exports_3, context_3) {
             b2Color.RED = new b2Color(1, 0, 0);
             b2Color.GREEN = new b2Color(0, 1, 0);
             b2Color.BLUE = new b2Color(0, 0, 1);
-            exports_3("b2Color", b2Color);
+            exports_4("b2Color", b2Color);
             b2Draw = (function () {
                 function b2Draw() {
                     this.m_drawFlags = 0;
@@ -1259,13 +1268,13 @@ System.register("Box2D/Common/b2Draw", [], function (exports_3, context_3) {
                 b2Draw.prototype.DrawTransform = function (xf) { };
                 return b2Draw;
             }());
-            exports_3("b2Draw", b2Draw);
+            exports_4("b2Draw", b2Draw);
         }
     };
 });
-System.register("Box2D/Common/b2Timer", [], function (exports_4, context_4) {
+System.register("Box2D/Common/b2Timer", [], function (exports_5, context_5) {
     "use strict";
-    var __moduleName = context_4 && context_4.id;
+    var __moduleName = context_5 && context_5.id;
     var b2Timer, b2Counter;
     return {
         setters: [],
@@ -1283,7 +1292,7 @@ System.register("Box2D/Common/b2Timer", [], function (exports_4, context_4) {
                 };
                 return b2Timer;
             }());
-            exports_4("b2Timer", b2Timer);
+            exports_5("b2Timer", b2Timer);
             b2Counter = (function () {
                 function b2Counter() {
                     this.m_count = 0;
@@ -1324,13 +1333,13 @@ System.register("Box2D/Common/b2Timer", [], function (exports_4, context_4) {
                 };
                 return b2Counter;
             }());
-            exports_4("b2Counter", b2Counter);
+            exports_5("b2Counter", b2Counter);
         }
     };
 });
-System.register("Box2D/Common/b2GrowableStack", [], function (exports_5, context_5) {
+System.register("Box2D/Common/b2GrowableStack", [], function (exports_6, context_6) {
     "use strict";
-    var __moduleName = context_5 && context_5.id;
+    var __moduleName = context_6 && context_6.id;
     var b2GrowableStack;
     return {
         setters: [],
@@ -1361,13 +1370,13 @@ System.register("Box2D/Common/b2GrowableStack", [], function (exports_5, context
                 };
                 return b2GrowableStack;
             }());
-            exports_5("b2GrowableStack", b2GrowableStack);
+            exports_6("b2GrowableStack", b2GrowableStack);
         }
     };
 });
-System.register("Box2D/Common/b2BlockAllocator", [], function (exports_6, context_6) {
+System.register("Box2D/Common/b2BlockAllocator", [], function (exports_7, context_7) {
     "use strict";
-    var __moduleName = context_6 && context_6.id;
+    var __moduleName = context_7 && context_7.id;
     var b2BlockAllocator;
     return {
         setters: [],
@@ -1377,13 +1386,13 @@ System.register("Box2D/Common/b2BlockAllocator", [], function (exports_6, contex
                 }
                 return b2BlockAllocator;
             }());
-            exports_6("b2BlockAllocator", b2BlockAllocator);
+            exports_7("b2BlockAllocator", b2BlockAllocator);
         }
     };
 });
-System.register("Box2D/Common/b2StackAllocator", [], function (exports_7, context_7) {
+System.register("Box2D/Common/b2StackAllocator", [], function (exports_8, context_8) {
     "use strict";
-    var __moduleName = context_7 && context_7.id;
+    var __moduleName = context_8 && context_8.id;
     var b2StackAllocator;
     return {
         setters: [],
@@ -1393,15 +1402,15 @@ System.register("Box2D/Common/b2StackAllocator", [], function (exports_7, contex
                 }
                 return b2StackAllocator;
             }());
-            exports_7("b2StackAllocator", b2StackAllocator);
+            exports_8("b2StackAllocator", b2StackAllocator);
         }
     };
 });
-System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math"], function (exports_8, context_8) {
+System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math"], function (exports_9, context_9) {
     "use strict";
-    var __moduleName = context_8 && context_8.id;
+    var __moduleName = context_9 && context_9.id;
     function b2Distance(output, cache, input) {
-        exports_8("b2_gjkCalls", ++b2_gjkCalls);
+        exports_9("b2_gjkCalls", ++b2_gjkCalls);
         var proxyA = input.proxyA;
         var proxyB = input.proxyB;
         var transformA = input.transformA;
@@ -1451,7 +1460,7 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
             b2Math_1.b2Transform.MulXV(transformB, proxyB.GetVertex(vertex.indexB), vertex.wB);
             b2Math_1.b2Vec2.SubVV(vertex.wB, vertex.wA, vertex.w);
             ++iter;
-            exports_8("b2_gjkIters", ++b2_gjkIters);
+            exports_9("b2_gjkIters", ++b2_gjkIters);
             var duplicate = false;
             for (var i = 0; i < saveCount; ++i) {
                 if (vertex.indexA === saveA[i] && vertex.indexB === saveB[i]) {
@@ -1464,7 +1473,7 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
             }
             ++simplex.m_count;
         }
-        exports_8("b2_gjkMaxIters", b2_gjkMaxIters = b2Math_1.b2Max(b2_gjkMaxIters, iter));
+        exports_9("b2_gjkMaxIters", b2_gjkMaxIters = b2Math_1.b2Max(b2_gjkMaxIters, iter));
         simplex.GetWitnessPoints(output.pointA, output.pointB);
         output.distance = b2Math_1.b2Vec2.DistanceVV(output.pointA, output.pointB);
         output.iterations = iter;
@@ -1487,7 +1496,7 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
             }
         }
     }
-    exports_8("b2Distance", b2Distance);
+    exports_9("b2Distance", b2Distance);
     var b2Settings_2, b2Math_1, b2DistanceProxy, b2SimplexCache, b2DistanceInput, b2DistanceOutput, b2_gjkCalls, b2_gjkIters, b2_gjkMaxIters, b2SimplexVertex, b2Simplex, b2Distance_s_simplex, b2Distance_s_saveA, b2Distance_s_saveB, b2Distance_s_p, b2Distance_s_d, b2Distance_s_normal, b2Distance_s_supportA, b2Distance_s_supportB;
     return {
         setters: [
@@ -1547,7 +1556,7 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
                 };
                 return b2DistanceProxy;
             }());
-            exports_8("b2DistanceProxy", b2DistanceProxy);
+            exports_9("b2DistanceProxy", b2DistanceProxy);
             b2SimplexCache = (function () {
                 function b2SimplexCache() {
                     this.metric = 0;
@@ -1562,7 +1571,7 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
                 };
                 return b2SimplexCache;
             }());
-            exports_8("b2SimplexCache", b2SimplexCache);
+            exports_9("b2SimplexCache", b2SimplexCache);
             b2DistanceInput = (function () {
                 function b2DistanceInput() {
                     this.proxyA = new b2DistanceProxy();
@@ -1581,7 +1590,7 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
                 };
                 return b2DistanceInput;
             }());
-            exports_8("b2DistanceInput", b2DistanceInput);
+            exports_9("b2DistanceInput", b2DistanceInput);
             b2DistanceOutput = (function () {
                 function b2DistanceOutput() {
                     this.pointA = new b2Math_1.b2Vec2();
@@ -1598,10 +1607,10 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
                 };
                 return b2DistanceOutput;
             }());
-            exports_8("b2DistanceOutput", b2DistanceOutput);
-            exports_8("b2_gjkCalls", b2_gjkCalls = 0);
-            exports_8("b2_gjkIters", b2_gjkIters = 0);
-            exports_8("b2_gjkMaxIters", b2_gjkMaxIters = 0);
+            exports_9("b2DistanceOutput", b2DistanceOutput);
+            exports_9("b2_gjkCalls", b2_gjkCalls = 0);
+            exports_9("b2_gjkIters", b2_gjkIters = 0);
+            exports_9("b2_gjkMaxIters", b2_gjkMaxIters = 0);
             b2SimplexVertex = (function () {
                 function b2SimplexVertex() {
                     this.wA = new b2Math_1.b2Vec2();
@@ -1622,7 +1631,7 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
                 };
                 return b2SimplexVertex;
             }());
-            exports_8("b2SimplexVertex", b2SimplexVertex);
+            exports_9("b2SimplexVertex", b2SimplexVertex);
             b2Simplex = (function () {
                 function b2Simplex() {
                     this.m_v1 = new b2SimplexVertex();
@@ -1841,7 +1850,7 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
             b2Simplex.s_e12 = new b2Math_1.b2Vec2();
             b2Simplex.s_e13 = new b2Math_1.b2Vec2();
             b2Simplex.s_e23 = new b2Math_1.b2Vec2();
-            exports_8("b2Simplex", b2Simplex);
+            exports_9("b2Simplex", b2Simplex);
             b2Distance_s_simplex = new b2Simplex();
             b2Distance_s_saveA = [0, 0, 0];
             b2Distance_s_saveB = [0, 0, 0];
@@ -1853,9 +1862,9 @@ System.register("Box2D/Collision/b2Distance", ["Box2D/Common/b2Settings", "Box2D
         }
     };
 });
-System.register("Box2D/Collision/Shapes/b2Shape", ["Box2D/Common/b2Math"], function (exports_9, context_9) {
+System.register("Box2D/Collision/Shapes/b2Shape", ["Box2D/Common/b2Math"], function (exports_10, context_10) {
     "use strict";
-    var __moduleName = context_9 && context_9.id;
+    var __moduleName = context_10 && context_10.id;
     var b2Math_2, b2MassData, b2Shape;
     return {
         setters: [
@@ -1872,7 +1881,7 @@ System.register("Box2D/Collision/Shapes/b2Shape", ["Box2D/Common/b2Math"], funct
                 }
                 return b2MassData;
             }());
-            exports_9("b2MassData", b2MassData);
+            exports_10("b2MassData", b2MassData);
             b2Shape = (function () {
                 function b2Shape(type, radius) {
                     this.m_type = -1;
@@ -1889,13 +1898,13 @@ System.register("Box2D/Collision/Shapes/b2Shape", ["Box2D/Common/b2Math"], funct
                 };
                 return b2Shape;
             }());
-            exports_9("b2Shape", b2Shape);
+            exports_10("b2Shape", b2Shape);
         }
     };
 });
-System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Distance"], function (exports_10, context_10) {
+System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Distance"], function (exports_11, context_11) {
     "use strict";
-    var __moduleName = context_10 && context_10.id;
+    var __moduleName = context_11 && context_11.id;
     function b2GetPointStates(state1, state2, manifold1, manifold2) {
         var i;
         for (i = 0; i < manifold1.pointCount; ++i) {
@@ -1927,7 +1936,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
             state2[i] = 0;
         }
     }
-    exports_10("b2GetPointStates", b2GetPointStates);
+    exports_11("b2GetPointStates", b2GetPointStates);
     function b2TestOverlapAABB(a, b) {
         var d1_x = b.lowerBound.x - a.upperBound.x;
         var d1_y = b.lowerBound.y - a.upperBound.y;
@@ -1939,7 +1948,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
             return false;
         return true;
     }
-    exports_10("b2TestOverlapAABB", b2TestOverlapAABB);
+    exports_11("b2TestOverlapAABB", b2TestOverlapAABB);
     function b2ClipSegmentToLine(vOut, vIn, normal, offset, vertexIndexA) {
         var numOut = 0;
         var vIn0 = vIn[0];
@@ -1964,7 +1973,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
         }
         return numOut;
     }
-    exports_10("b2ClipSegmentToLine", b2ClipSegmentToLine);
+    exports_11("b2ClipSegmentToLine", b2ClipSegmentToLine);
     function b2TestOverlapShape(shapeA, indexA, shapeB, indexB, xfA, xfB) {
         var input = b2TestOverlapShape_s_input.Reset();
         input.proxyA.SetShape(shapeA, indexA);
@@ -1978,7 +1987,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
         b2Distance_1.b2Distance(output, simplexCache, input);
         return output.distance < 10 * b2Settings_3.b2_epsilon;
     }
-    exports_10("b2TestOverlapShape", b2TestOverlapShape);
+    exports_11("b2TestOverlapShape", b2TestOverlapShape);
     var b2Settings_3, b2Math_3, b2Distance_1, b2ContactFeature, b2ContactID, b2ManifoldPoint, b2Manifold, b2WorldManifold, b2ClipVertex, b2RayCastInput, b2RayCastOutput, b2AABB, b2TestOverlapShape_s_input, b2TestOverlapShape_s_simplexCache, b2TestOverlapShape_s_output;
     return {
         setters: [
@@ -2067,7 +2076,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
                 });
                 return b2ContactFeature;
             }());
-            exports_10("b2ContactFeature", b2ContactFeature);
+            exports_11("b2ContactFeature", b2ContactFeature);
             b2ContactID = (function () {
                 function b2ContactID() {
                     this.cf = new b2ContactFeature();
@@ -2091,7 +2100,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
                 });
                 return b2ContactID;
             }());
-            exports_10("b2ContactID", b2ContactID);
+            exports_11("b2ContactID", b2ContactID);
             b2ManifoldPoint = (function () {
                 function b2ManifoldPoint() {
                     this.localPoint = new b2Math_3.b2Vec2();
@@ -2117,7 +2126,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
                 };
                 return b2ManifoldPoint;
             }());
-            exports_10("b2ManifoldPoint", b2ManifoldPoint);
+            exports_11("b2ManifoldPoint", b2ManifoldPoint);
             b2Manifold = (function () {
                 function b2Manifold() {
                     this.points = b2ManifoldPoint.MakeArray(b2Settings_3.b2_maxManifoldPoints);
@@ -2150,7 +2159,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
                 };
                 return b2Manifold;
             }());
-            exports_10("b2Manifold", b2Manifold);
+            exports_11("b2Manifold", b2Manifold);
             b2WorldManifold = (function () {
                 function b2WorldManifold() {
                     this.normal = new b2Math_3.b2Vec2();
@@ -2215,7 +2224,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
             b2WorldManifold.Initialize_s_cB = new b2Math_3.b2Vec2();
             b2WorldManifold.Initialize_s_planePoint = new b2Math_3.b2Vec2();
             b2WorldManifold.Initialize_s_clipPoint = new b2Math_3.b2Vec2();
-            exports_10("b2WorldManifold", b2WorldManifold);
+            exports_11("b2WorldManifold", b2WorldManifold);
             b2ClipVertex = (function () {
                 function b2ClipVertex() {
                     this.v = new b2Math_3.b2Vec2();
@@ -2231,7 +2240,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
                 };
                 return b2ClipVertex;
             }());
-            exports_10("b2ClipVertex", b2ClipVertex);
+            exports_11("b2ClipVertex", b2ClipVertex);
             b2RayCastInput = (function () {
                 function b2RayCastInput() {
                     this.p1 = new b2Math_3.b2Vec2();
@@ -2246,7 +2255,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
                 };
                 return b2RayCastInput;
             }());
-            exports_10("b2RayCastInput", b2RayCastInput);
+            exports_11("b2RayCastInput", b2RayCastInput);
             b2RayCastOutput = (function () {
                 function b2RayCastOutput() {
                     this.normal = new b2Math_3.b2Vec2();
@@ -2259,7 +2268,7 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
                 };
                 return b2RayCastOutput;
             }());
-            exports_10("b2RayCastOutput", b2RayCastOutput);
+            exports_11("b2RayCastOutput", b2RayCastOutput);
             b2AABB = (function () {
                 function b2AABB() {
                     this.lowerBound = new b2Math_3.b2Vec2();
@@ -2397,16 +2406,16 @@ System.register("Box2D/Collision/b2Collision", ["Box2D/Common/b2Settings", "Box2
                 };
                 return b2AABB;
             }());
-            exports_10("b2AABB", b2AABB);
+            exports_11("b2AABB", b2AABB);
             b2TestOverlapShape_s_input = new b2Distance_1.b2DistanceInput();
             b2TestOverlapShape_s_simplexCache = new b2Distance_1.b2SimplexCache();
             b2TestOverlapShape_s_output = new b2Distance_1.b2DistanceOutput();
         }
     };
 });
-System.register("Box2D/Collision/b2DynamicTree", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2GrowableStack", "Box2D/Collision/b2Collision"], function (exports_11, context_11) {
+System.register("Box2D/Collision/b2DynamicTree", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2GrowableStack", "Box2D/Collision/b2Collision"], function (exports_12, context_12) {
     "use strict";
-    var __moduleName = context_11 && context_11.id;
+    var __moduleName = context_12 && context_12.id;
     var b2Settings_4, b2Math_4, b2GrowableStack_1, b2Collision_1, b2TreeNode, b2DynamicTree;
     return {
         setters: [
@@ -2441,7 +2450,7 @@ System.register("Box2D/Collision/b2DynamicTree", ["Box2D/Common/b2Settings", "Bo
                 };
                 return b2TreeNode;
             }());
-            exports_11("b2TreeNode", b2TreeNode);
+            exports_12("b2TreeNode", b2TreeNode);
             b2DynamicTree = (function () {
                 function b2DynamicTree() {
                     this.m_root = null;
@@ -2926,16 +2935,16 @@ System.register("Box2D/Collision/b2DynamicTree", ["Box2D/Common/b2Settings", "Bo
             b2DynamicTree.s_combinedAABB = new b2Collision_1.b2AABB();
             b2DynamicTree.s_aabb = new b2Collision_1.b2AABB();
             b2DynamicTree.s_node_id = 0;
-            exports_11("b2DynamicTree", b2DynamicTree);
+            exports_12("b2DynamicTree", b2DynamicTree);
         }
     };
 });
-System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Timer", "Box2D/Collision/b2Distance"], function (exports_12, context_12) {
+System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Timer", "Box2D/Collision/b2Distance"], function (exports_13, context_13) {
     "use strict";
-    var __moduleName = context_12 && context_12.id;
+    var __moduleName = context_13 && context_13.id;
     function b2TimeOfImpact(output, input) {
         var timer = b2TimeOfImpact_s_timer.Reset();
-        exports_12("b2_toiCalls", ++b2_toiCalls);
+        exports_13("b2_toiCalls", ++b2_toiCalls);
         output.state = 0;
         output.t = input.tMax;
         var proxyA = input.proxyA;
@@ -3020,7 +3029,7 @@ System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "B
                         t = 0.5 * (a1 + a2);
                     }
                     ++rootIterCount;
-                    exports_12("b2_toiRootIters", ++b2_toiRootIters);
+                    exports_13("b2_toiRootIters", ++b2_toiRootIters);
                     var s = fcn.Evaluate(indexA[0], indexB[0], t);
                     if (b2Math_5.b2Abs(s - target) < tolerance) {
                         t2 = t;
@@ -3038,14 +3047,14 @@ System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "B
                         break;
                     }
                 }
-                exports_12("b2_toiMaxRootIters", b2_toiMaxRootIters = b2Math_5.b2Max(b2_toiMaxRootIters, rootIterCount));
+                exports_13("b2_toiMaxRootIters", b2_toiMaxRootIters = b2Math_5.b2Max(b2_toiMaxRootIters, rootIterCount));
                 ++pushBackIter;
                 if (pushBackIter === b2Settings_5.b2_maxPolygonVertices) {
                     break;
                 }
             }
             ++iter;
-            exports_12("b2_toiIters", ++b2_toiIters);
+            exports_13("b2_toiIters", ++b2_toiIters);
             if (done) {
                 break;
             }
@@ -3055,12 +3064,12 @@ System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "B
                 break;
             }
         }
-        exports_12("b2_toiMaxIters", b2_toiMaxIters = b2Math_5.b2Max(b2_toiMaxIters, iter));
+        exports_13("b2_toiMaxIters", b2_toiMaxIters = b2Math_5.b2Max(b2_toiMaxIters, iter));
         var time = timer.GetMilliseconds();
-        exports_12("b2_toiMaxTime", b2_toiMaxTime = b2Math_5.b2Max(b2_toiMaxTime, time));
-        exports_12("b2_toiTime", b2_toiTime += time);
+        exports_13("b2_toiMaxTime", b2_toiMaxTime = b2Math_5.b2Max(b2_toiMaxTime, time));
+        exports_13("b2_toiTime", b2_toiTime += time);
     }
-    exports_12("b2TimeOfImpact", b2TimeOfImpact);
+    exports_13("b2TimeOfImpact", b2TimeOfImpact);
     var b2Settings_5, b2Math_5, b2Timer_1, b2Distance_2, b2_toiTime, b2_toiMaxTime, b2_toiCalls, b2_toiIters, b2_toiMaxIters, b2_toiRootIters, b2_toiMaxRootIters, b2TimeOfImpact_s_xfA, b2TimeOfImpact_s_xfB, b2TimeOfImpact_s_pointA, b2TimeOfImpact_s_pointB, b2TimeOfImpact_s_normal, b2TimeOfImpact_s_axisA, b2TimeOfImpact_s_axisB, b2TOIInput, b2TOIOutput, b2SeparationFunction, b2TimeOfImpact_s_timer, b2TimeOfImpact_s_cache, b2TimeOfImpact_s_distanceInput, b2TimeOfImpact_s_distanceOutput, b2TimeOfImpact_s_fcn, b2TimeOfImpact_s_indexA, b2TimeOfImpact_s_indexB, b2TimeOfImpact_s_sweepA, b2TimeOfImpact_s_sweepB;
     return {
         setters: [
@@ -3078,13 +3087,13 @@ System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "B
             }
         ],
         execute: function () {
-            exports_12("b2_toiTime", b2_toiTime = 0);
-            exports_12("b2_toiMaxTime", b2_toiMaxTime = 0);
-            exports_12("b2_toiCalls", b2_toiCalls = 0);
-            exports_12("b2_toiIters", b2_toiIters = 0);
-            exports_12("b2_toiMaxIters", b2_toiMaxIters = 0);
-            exports_12("b2_toiRootIters", b2_toiRootIters = 0);
-            exports_12("b2_toiMaxRootIters", b2_toiMaxRootIters = 0);
+            exports_13("b2_toiTime", b2_toiTime = 0);
+            exports_13("b2_toiMaxTime", b2_toiMaxTime = 0);
+            exports_13("b2_toiCalls", b2_toiCalls = 0);
+            exports_13("b2_toiIters", b2_toiIters = 0);
+            exports_13("b2_toiMaxIters", b2_toiMaxIters = 0);
+            exports_13("b2_toiRootIters", b2_toiRootIters = 0);
+            exports_13("b2_toiMaxRootIters", b2_toiMaxRootIters = 0);
             b2TimeOfImpact_s_xfA = new b2Math_5.b2Transform();
             b2TimeOfImpact_s_xfB = new b2Math_5.b2Transform();
             b2TimeOfImpact_s_pointA = new b2Math_5.b2Vec2();
@@ -3102,7 +3111,7 @@ System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "B
                 }
                 return b2TOIInput;
             }());
-            exports_12("b2TOIInput", b2TOIInput);
+            exports_13("b2TOIInput", b2TOIInput);
             b2TOIOutput = (function () {
                 function b2TOIOutput() {
                     this.state = 0;
@@ -3110,7 +3119,7 @@ System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "B
                 }
                 return b2TOIOutput;
             }());
-            exports_12("b2TOIOutput", b2TOIOutput);
+            exports_13("b2TOIOutput", b2TOIOutput);
             b2SeparationFunction = (function () {
                 function b2SeparationFunction() {
                     this.m_sweepA = new b2Math_5.b2Sweep();
@@ -3257,7 +3266,7 @@ System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "B
                 };
                 return b2SeparationFunction;
             }());
-            exports_12("b2SeparationFunction", b2SeparationFunction);
+            exports_13("b2SeparationFunction", b2SeparationFunction);
             b2TimeOfImpact_s_timer = new b2Timer_1.b2Timer();
             b2TimeOfImpact_s_cache = new b2Distance_2.b2SimplexCache();
             b2TimeOfImpact_s_distanceInput = new b2Distance_2.b2DistanceInput();
@@ -3270,9 +3279,9 @@ System.register("Box2D/Collision/b2TimeOfImpact", ["Box2D/Common/b2Settings", "B
         }
     };
 });
-System.register("Box2D/Dynamics/b2TimeStep", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math"], function (exports_13, context_13) {
+System.register("Box2D/Dynamics/b2TimeStep", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math"], function (exports_14, context_14) {
     "use strict";
-    var __moduleName = context_13 && context_13.id;
+    var __moduleName = context_14 && context_14.id;
     var b2Settings_6, b2Math_6, b2Profile, b2TimeStep, b2Position, b2Velocity, b2SolverData;
     return {
         setters: [
@@ -3308,7 +3317,7 @@ System.register("Box2D/Dynamics/b2TimeStep", ["Box2D/Common/b2Settings", "Box2D/
                 };
                 return b2Profile;
             }());
-            exports_13("b2Profile", b2Profile);
+            exports_14("b2Profile", b2Profile);
             b2TimeStep = (function () {
                 function b2TimeStep() {
                     this.dt = 0;
@@ -3331,7 +3340,7 @@ System.register("Box2D/Dynamics/b2TimeStep", ["Box2D/Common/b2Settings", "Box2D/
                 };
                 return b2TimeStep;
             }());
-            exports_13("b2TimeStep", b2TimeStep);
+            exports_14("b2TimeStep", b2TimeStep);
             b2Position = (function () {
                 function b2Position() {
                     this.c = new b2Math_6.b2Vec2();
@@ -3342,7 +3351,7 @@ System.register("Box2D/Dynamics/b2TimeStep", ["Box2D/Common/b2Settings", "Box2D/
                 };
                 return b2Position;
             }());
-            exports_13("b2Position", b2Position);
+            exports_14("b2Position", b2Position);
             b2Velocity = (function () {
                 function b2Velocity() {
                     this.v = new b2Math_6.b2Vec2();
@@ -3353,7 +3362,7 @@ System.register("Box2D/Dynamics/b2TimeStep", ["Box2D/Common/b2Settings", "Box2D/
                 };
                 return b2Velocity;
             }());
-            exports_13("b2Velocity", b2Velocity);
+            exports_14("b2Velocity", b2Velocity);
             b2SolverData = (function () {
                 function b2SolverData() {
                     this.step = new b2TimeStep();
@@ -3362,13 +3371,13 @@ System.register("Box2D/Dynamics/b2TimeStep", ["Box2D/Common/b2Settings", "Box2D/
                 }
                 return b2SolverData;
             }());
-            exports_13("b2SolverData", b2SolverData);
+            exports_14("b2SolverData", b2SolverData);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2Joint", ["Box2D/Common/b2Math"], function (exports_14, context_14) {
+System.register("Box2D/Dynamics/Joints/b2Joint", ["Box2D/Common/b2Math"], function (exports_15, context_15) {
     "use strict";
-    var __moduleName = context_14 && context_14.id;
+    var __moduleName = context_15 && context_15.id;
     var b2Math_7, b2Jacobian, b2JointEdge, b2JointDef, b2Joint;
     return {
         setters: [
@@ -3397,7 +3406,7 @@ System.register("Box2D/Dynamics/Joints/b2Joint", ["Box2D/Common/b2Math"], functi
                 };
                 return b2Jacobian;
             }());
-            exports_14("b2Jacobian", b2Jacobian);
+            exports_15("b2Jacobian", b2Jacobian);
             b2JointEdge = (function () {
                 function b2JointEdge() {
                     this.other = null;
@@ -3407,7 +3416,7 @@ System.register("Box2D/Dynamics/Joints/b2Joint", ["Box2D/Common/b2Math"], functi
                 }
                 return b2JointEdge;
             }());
-            exports_14("b2JointEdge", b2JointEdge);
+            exports_15("b2JointEdge", b2JointEdge);
             b2JointDef = (function () {
                 function b2JointDef(type) {
                     this.type = 0;
@@ -3419,7 +3428,7 @@ System.register("Box2D/Dynamics/Joints/b2Joint", ["Box2D/Common/b2Math"], functi
                 }
                 return b2JointDef;
             }());
-            exports_14("b2JointDef", b2JointDef);
+            exports_15("b2JointDef", b2JointDef);
             b2Joint = (function () {
                 function b2Joint(def) {
                     this.m_type = 0;
@@ -3489,13 +3498,13 @@ System.register("Box2D/Dynamics/Joints/b2Joint", ["Box2D/Common/b2Math"], functi
                 };
                 return b2Joint;
             }());
-            exports_14("b2Joint", b2Joint);
+            exports_15("b2Joint", b2Joint);
         }
     };
 });
-System.register("Box2D/Dynamics/b2Fixture", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision", "Box2D/Collision/Shapes/b2Shape"], function (exports_15, context_15) {
+System.register("Box2D/Dynamics/b2Fixture", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision", "Box2D/Collision/Shapes/b2Shape"], function (exports_16, context_16) {
     "use strict";
-    var __moduleName = context_15 && context_15.id;
+    var __moduleName = context_16 && context_16.id;
     var b2Settings_7, b2Math_8, b2Collision_2, b2Shape_1, b2Filter, b2FixtureDef, b2FixtureProxy, b2Fixture;
     return {
         setters: [
@@ -3530,7 +3539,7 @@ System.register("Box2D/Dynamics/b2Fixture", ["Box2D/Common/b2Settings", "Box2D/C
                 };
                 return b2Filter;
             }());
-            exports_15("b2Filter", b2Filter);
+            exports_16("b2Filter", b2Filter);
             b2FixtureDef = (function () {
                 function b2FixtureDef() {
                     this.shape = null;
@@ -3543,7 +3552,7 @@ System.register("Box2D/Dynamics/b2Fixture", ["Box2D/Common/b2Settings", "Box2D/C
                 }
                 return b2FixtureDef;
             }());
-            exports_15("b2FixtureDef", b2FixtureDef);
+            exports_16("b2FixtureDef", b2FixtureDef);
             b2FixtureProxy = (function () {
                 function b2FixtureProxy() {
                     this.aabb = new b2Collision_2.b2AABB();
@@ -3556,7 +3565,7 @@ System.register("Box2D/Dynamics/b2Fixture", ["Box2D/Common/b2Settings", "Box2D/C
                 };
                 return b2FixtureProxy;
             }());
-            exports_15("b2FixtureProxy", b2FixtureProxy);
+            exports_16("b2FixtureProxy", b2FixtureProxy);
             b2Fixture = (function () {
                 function b2Fixture() {
                     this.m_density = 0;
@@ -3732,13 +3741,13 @@ System.register("Box2D/Dynamics/b2Fixture", ["Box2D/Common/b2Settings", "Box2D/C
             b2Fixture.Synchronize_s_aabb1 = new b2Collision_2.b2AABB();
             b2Fixture.Synchronize_s_aabb2 = new b2Collision_2.b2AABB();
             b2Fixture.Synchronize_s_displacement = new b2Math_8.b2Vec2();
-            exports_15("b2Fixture", b2Fixture);
+            exports_16("b2Fixture", b2Fixture);
         }
     };
 });
-System.register("Box2D/Collision/Shapes/b2EdgeShape", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape"], function (exports_16, context_16) {
+System.register("Box2D/Collision/Shapes/b2EdgeShape", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape"], function (exports_17, context_17) {
     "use strict";
-    var __moduleName = context_16 && context_16.id;
+    var __moduleName = context_17 && context_17.id;
     var b2Settings_8, b2Math_9, b2Shape_2, b2EdgeShape;
     return {
         setters: [
@@ -3892,13 +3901,13 @@ System.register("Box2D/Collision/Shapes/b2EdgeShape", ["Box2D/Common/b2Settings"
             b2EdgeShape.RayCast_s_r = new b2Math_9.b2Vec2();
             b2EdgeShape.ComputeAABB_s_v1 = new b2Math_9.b2Vec2();
             b2EdgeShape.ComputeAABB_s_v2 = new b2Math_9.b2Vec2();
-            exports_16("b2EdgeShape", b2EdgeShape);
+            exports_17("b2EdgeShape", b2EdgeShape);
         }
     };
 });
-System.register("Box2D/Collision/Shapes/b2ChainShape", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape", "Box2D/Collision/Shapes/b2EdgeShape"], function (exports_17, context_17) {
+System.register("Box2D/Collision/Shapes/b2ChainShape", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape", "Box2D/Collision/Shapes/b2EdgeShape"], function (exports_18, context_18) {
     "use strict";
-    var __moduleName = context_17 && context_17.id;
+    var __moduleName = context_18 && context_18.id;
     var b2Settings_9, b2Math_10, b2Shape_3, b2EdgeShape_1, b2ChainShape;
     return {
         setters: [
@@ -4062,13 +4071,13 @@ System.register("Box2D/Collision/Shapes/b2ChainShape", ["Box2D/Common/b2Settings
             b2ChainShape.RayCast_s_edgeShape = new b2EdgeShape_1.b2EdgeShape();
             b2ChainShape.ComputeAABB_s_v1 = new b2Math_10.b2Vec2();
             b2ChainShape.ComputeAABB_s_v2 = new b2Math_10.b2Vec2();
-            exports_17("b2ChainShape", b2ChainShape);
+            exports_18("b2ChainShape", b2ChainShape);
         }
     };
 });
-System.register("Box2D/Collision/Shapes/b2CircleShape", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape"], function (exports_18, context_18) {
+System.register("Box2D/Collision/Shapes/b2CircleShape", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape"], function (exports_19, context_19) {
     "use strict";
-    var __moduleName = context_18 && context_18.id;
+    var __moduleName = context_19 && context_19.id;
     var b2Settings_10, b2Math_11, b2Shape_4, b2CircleShape;
     return {
         setters: [
@@ -4181,13 +4190,13 @@ System.register("Box2D/Collision/Shapes/b2CircleShape", ["Box2D/Common/b2Setting
             b2CircleShape.RayCast_s_s = new b2Math_11.b2Vec2();
             b2CircleShape.RayCast_s_r = new b2Math_11.b2Vec2();
             b2CircleShape.ComputeAABB_s_p = new b2Math_11.b2Vec2();
-            exports_18("b2CircleShape", b2CircleShape);
+            exports_19("b2CircleShape", b2CircleShape);
         }
     };
 });
-System.register("Box2D/Collision/Shapes/b2PolygonShape", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape"], function (exports_19, context_19) {
+System.register("Box2D/Collision/Shapes/b2PolygonShape", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape"], function (exports_20, context_20) {
     "use strict";
-    var __moduleName = context_19 && context_19.id;
+    var __moduleName = context_20 && context_20.id;
     var b2Settings_11, b2Math_12, b2Shape_5, b2Shape_6, b2PolygonShape;
     return {
         setters: [
@@ -4607,13 +4616,13 @@ System.register("Box2D/Collision/Shapes/b2PolygonShape", ["Box2D/Common/b2Settin
             b2PolygonShape.ComputeCentroid_s_pRef = new b2Math_12.b2Vec2();
             b2PolygonShape.ComputeCentroid_s_e1 = new b2Math_12.b2Vec2();
             b2PolygonShape.ComputeCentroid_s_e2 = new b2Math_12.b2Vec2();
-            exports_19("b2PolygonShape", b2PolygonShape);
+            exports_20("b2PolygonShape", b2PolygonShape);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2DistanceJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_20, context_20) {
+System.register("Box2D/Dynamics/Joints/b2DistanceJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_21, context_21) {
     "use strict";
-    var __moduleName = context_20 && context_20.id;
+    var __moduleName = context_21 && context_21.id;
     var b2Settings_12, b2Math_13, b2Joint_1, b2DistanceJointDef, b2DistanceJoint;
     return {
         setters: [
@@ -4650,7 +4659,7 @@ System.register("Box2D/Dynamics/Joints/b2DistanceJoint", ["Box2D/Common/b2Settin
                 };
                 return b2DistanceJointDef;
             }(b2Joint_1.b2JointDef));
-            exports_20("b2DistanceJointDef", b2DistanceJointDef);
+            exports_21("b2DistanceJointDef", b2DistanceJointDef);
             b2DistanceJoint = (function (_super) {
                 __extends(b2DistanceJoint, _super);
                 function b2DistanceJoint(def) {
@@ -4848,13 +4857,13 @@ System.register("Box2D/Dynamics/Joints/b2DistanceJoint", ["Box2D/Common/b2Settin
             b2DistanceJoint.SolveVelocityConstraints_s_vpB = new b2Math_13.b2Vec2();
             b2DistanceJoint.SolveVelocityConstraints_s_P = new b2Math_13.b2Vec2();
             b2DistanceJoint.SolvePositionConstraints_s_P = new b2Math_13.b2Vec2();
-            exports_20("b2DistanceJoint", b2DistanceJoint);
+            exports_21("b2DistanceJoint", b2DistanceJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2AreaJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint", "Box2D/Dynamics/Joints/b2DistanceJoint"], function (exports_21, context_21) {
+System.register("Box2D/Dynamics/Joints/b2AreaJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint", "Box2D/Dynamics/Joints/b2DistanceJoint"], function (exports_22, context_22) {
     "use strict";
-    var __moduleName = context_21 && context_21.id;
+    var __moduleName = context_22 && context_22.id;
     var b2Settings_13, b2Math_14, b2Joint_2, b2DistanceJoint_1, b2AreaJointDef, b2AreaJoint;
     return {
         setters: [
@@ -4893,7 +4902,7 @@ System.register("Box2D/Dynamics/Joints/b2AreaJoint", ["Box2D/Common/b2Settings",
                 };
                 return b2AreaJointDef;
             }(b2Joint_2.b2JointDef));
-            exports_21("b2AreaJointDef", b2AreaJointDef);
+            exports_22("b2AreaJointDef", b2AreaJointDef);
             b2AreaJoint = (function (_super) {
                 __extends(b2AreaJoint, _super);
                 function b2AreaJoint(def) {
@@ -5051,13 +5060,13 @@ System.register("Box2D/Dynamics/Joints/b2AreaJoint", ["Box2D/Common/b2Settings",
                 };
                 return b2AreaJoint;
             }(b2Joint_2.b2Joint));
-            exports_21("b2AreaJoint", b2AreaJoint);
+            exports_22("b2AreaJoint", b2AreaJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2FrictionJoint", ["Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_22, context_22) {
+System.register("Box2D/Dynamics/Joints/b2FrictionJoint", ["Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_23, context_23) {
     "use strict";
-    var __moduleName = context_22 && context_22.id;
+    var __moduleName = context_23 && context_23.id;
     var b2Math_15, b2Joint_3, b2FrictionJointDef, b2FrictionJoint;
     return {
         setters: [
@@ -5087,7 +5096,7 @@ System.register("Box2D/Dynamics/Joints/b2FrictionJoint", ["Box2D/Common/b2Math",
                 };
                 return b2FrictionJointDef;
             }(b2Joint_3.b2JointDef));
-            exports_22("b2FrictionJointDef", b2FrictionJointDef);
+            exports_23("b2FrictionJointDef", b2FrictionJointDef);
             b2FrictionJoint = (function (_super) {
                 __extends(b2FrictionJoint, _super);
                 function b2FrictionJoint(def) {
@@ -5255,13 +5264,13 @@ System.register("Box2D/Dynamics/Joints/b2FrictionJoint", ["Box2D/Common/b2Math",
             b2FrictionJoint.SolveVelocityConstraints_s_Cdot_v2 = new b2Math_15.b2Vec2();
             b2FrictionJoint.SolveVelocityConstraints_s_impulseV = new b2Math_15.b2Vec2();
             b2FrictionJoint.SolveVelocityConstraints_s_oldImpulseV = new b2Math_15.b2Vec2();
-            exports_22("b2FrictionJoint", b2FrictionJoint);
+            exports_23("b2FrictionJoint", b2FrictionJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2PrismaticJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_23, context_23) {
+System.register("Box2D/Dynamics/Joints/b2PrismaticJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_24, context_24) {
     "use strict";
-    var __moduleName = context_23 && context_23.id;
+    var __moduleName = context_24 && context_24.id;
     var b2Settings_14, b2Math_16, b2Joint_4, b2PrismaticJointDef, b2PrismaticJoint;
     return {
         setters: [
@@ -5305,7 +5314,7 @@ System.register("Box2D/Dynamics/Joints/b2PrismaticJoint", ["Box2D/Common/b2Setti
                 };
                 return b2PrismaticJointDef;
             }(b2Joint_4.b2JointDef));
-            exports_23("b2PrismaticJointDef", b2PrismaticJointDef);
+            exports_24("b2PrismaticJointDef", b2PrismaticJointDef);
             b2PrismaticJoint = (function (_super) {
                 __extends(b2PrismaticJoint, _super);
                 function b2PrismaticJoint(def) {
@@ -5741,13 +5750,13 @@ System.register("Box2D/Dynamics/Joints/b2PrismaticJoint", ["Box2D/Common/b2Setti
             b2PrismaticJoint.GetJointTranslation_s_pB = new b2Math_16.b2Vec2();
             b2PrismaticJoint.GetJointTranslation_s_d = new b2Math_16.b2Vec2();
             b2PrismaticJoint.GetJointTranslation_s_axis = new b2Math_16.b2Vec2();
-            exports_23("b2PrismaticJoint", b2PrismaticJoint);
+            exports_24("b2PrismaticJoint", b2PrismaticJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2RevoluteJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_24, context_24) {
+System.register("Box2D/Dynamics/Joints/b2RevoluteJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_25, context_25) {
     "use strict";
-    var __moduleName = context_24 && context_24.id;
+    var __moduleName = context_25 && context_25.id;
     var b2Settings_15, b2Math_17, b2Joint_5, b2RevoluteJointDef, b2RevoluteJoint;
     return {
         setters: [
@@ -5786,7 +5795,7 @@ System.register("Box2D/Dynamics/Joints/b2RevoluteJoint", ["Box2D/Common/b2Settin
                 };
                 return b2RevoluteJointDef;
             }(b2Joint_5.b2JointDef));
-            exports_24("b2RevoluteJointDef", b2RevoluteJointDef);
+            exports_25("b2RevoluteJointDef", b2RevoluteJointDef);
             b2RevoluteJoint = (function (_super) {
                 __extends(b2RevoluteJoint, _super);
                 function b2RevoluteJoint(def) {
@@ -6153,13 +6162,13 @@ System.register("Box2D/Dynamics/Joints/b2RevoluteJoint", ["Box2D/Common/b2Settin
             b2RevoluteJoint.SolveVelocityConstraints_s_impulse_v2 = new b2Math_17.b2Vec2();
             b2RevoluteJoint.SolvePositionConstraints_s_C_v2 = new b2Math_17.b2Vec2();
             b2RevoluteJoint.SolvePositionConstraints_s_impulse = new b2Math_17.b2Vec2();
-            exports_24("b2RevoluteJoint", b2RevoluteJoint);
+            exports_25("b2RevoluteJoint", b2RevoluteJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2GearJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_25, context_25) {
+System.register("Box2D/Dynamics/Joints/b2GearJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_26, context_26) {
     "use strict";
-    var __moduleName = context_25 && context_25.id;
+    var __moduleName = context_26 && context_26.id;
     var b2Settings_16, b2Math_18, b2Joint_6, b2GearJointDef, b2GearJoint;
     return {
         setters: [
@@ -6185,7 +6194,7 @@ System.register("Box2D/Dynamics/Joints/b2GearJoint", ["Box2D/Common/b2Settings",
                 }
                 return b2GearJointDef;
             }(b2Joint_6.b2JointDef));
-            exports_25("b2GearJointDef", b2GearJointDef);
+            exports_26("b2GearJointDef", b2GearJointDef);
             b2GearJoint = (function (_super) {
                 __extends(b2GearJoint, _super);
                 function b2GearJoint(def) {
@@ -6525,13 +6534,13 @@ System.register("Box2D/Dynamics/Joints/b2GearJoint", ["Box2D/Common/b2Settings",
             b2GearJoint.SolvePositionConstraints_s_rB = new b2Math_18.b2Vec2();
             b2GearJoint.SolvePositionConstraints_s_rC = new b2Math_18.b2Vec2();
             b2GearJoint.SolvePositionConstraints_s_rD = new b2Math_18.b2Vec2();
-            exports_25("b2GearJoint", b2GearJoint);
+            exports_26("b2GearJoint", b2GearJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2MotorJoint", ["Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_26, context_26) {
+System.register("Box2D/Dynamics/Joints/b2MotorJoint", ["Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_27, context_27) {
     "use strict";
-    var __moduleName = context_26 && context_26.id;
+    var __moduleName = context_27 && context_27.id;
     var b2Math_19, b2Joint_7, b2MotorJointDef, b2MotorJoint;
     return {
         setters: [
@@ -6564,7 +6573,7 @@ System.register("Box2D/Dynamics/Joints/b2MotorJoint", ["Box2D/Common/b2Math", "B
                 };
                 return b2MotorJointDef;
             }(b2Joint_7.b2JointDef));
-            exports_26("b2MotorJointDef", b2MotorJointDef);
+            exports_27("b2MotorJointDef", b2MotorJointDef);
             b2MotorJoint = (function (_super) {
                 __extends(b2MotorJoint, _super);
                 function b2MotorJoint(def) {
@@ -6756,13 +6765,13 @@ System.register("Box2D/Dynamics/Joints/b2MotorJoint", ["Box2D/Common/b2Math", "B
             b2MotorJoint.SolveVelocityConstraints_s_Cdot_v2 = new b2Math_19.b2Vec2();
             b2MotorJoint.SolveVelocityConstraints_s_impulse_v2 = new b2Math_19.b2Vec2();
             b2MotorJoint.SolveVelocityConstraints_s_oldImpulse_v2 = new b2Math_19.b2Vec2();
-            exports_26("b2MotorJoint", b2MotorJoint);
+            exports_27("b2MotorJoint", b2MotorJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2MouseJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_27, context_27) {
+System.register("Box2D/Dynamics/Joints/b2MouseJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_28, context_28) {
     "use strict";
-    var __moduleName = context_27 && context_27.id;
+    var __moduleName = context_28 && context_28.id;
     var b2Settings_17, b2Math_20, b2Joint_8, b2MouseJointDef, b2MouseJoint;
     return {
         setters: [
@@ -6789,7 +6798,7 @@ System.register("Box2D/Dynamics/Joints/b2MouseJoint", ["Box2D/Common/b2Settings"
                 }
                 return b2MouseJointDef;
             }(b2Joint_8.b2JointDef));
-            exports_27("b2MouseJointDef", b2MouseJointDef);
+            exports_28("b2MouseJointDef", b2MouseJointDef);
             b2MouseJoint = (function (_super) {
                 __extends(b2MouseJoint, _super);
                 function b2MouseJoint(def) {
@@ -6945,13 +6954,13 @@ System.register("Box2D/Dynamics/Joints/b2MouseJoint", ["Box2D/Common/b2Settings"
             b2MouseJoint.SolveVelocityConstraints_s_Cdot = new b2Math_20.b2Vec2();
             b2MouseJoint.SolveVelocityConstraints_s_impulse = new b2Math_20.b2Vec2();
             b2MouseJoint.SolveVelocityConstraints_s_oldImpulse = new b2Math_20.b2Vec2();
-            exports_27("b2MouseJoint", b2MouseJoint);
+            exports_28("b2MouseJoint", b2MouseJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2PulleyJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_28, context_28) {
+System.register("Box2D/Dynamics/Joints/b2PulleyJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_29, context_29) {
     "use strict";
-    var __moduleName = context_28 && context_28.id;
+    var __moduleName = context_29 && context_29.id;
     var b2Settings_18, b2Math_21, b2Joint_9, b2_minPulleyLength, b2PulleyJointDef, b2PulleyJoint;
     return {
         setters: [
@@ -6966,7 +6975,7 @@ System.register("Box2D/Dynamics/Joints/b2PulleyJoint", ["Box2D/Common/b2Settings
             }
         ],
         execute: function () {
-            exports_28("b2_minPulleyLength", b2_minPulleyLength = 2);
+            exports_29("b2_minPulleyLength", b2_minPulleyLength = 2);
             b2PulleyJointDef = (function (_super) {
                 __extends(b2PulleyJointDef, _super);
                 function b2PulleyJointDef() {
@@ -6994,7 +7003,7 @@ System.register("Box2D/Dynamics/Joints/b2PulleyJoint", ["Box2D/Common/b2Settings
                 };
                 return b2PulleyJointDef;
             }(b2Joint_9.b2JointDef));
-            exports_28("b2PulleyJointDef", b2PulleyJointDef);
+            exports_29("b2PulleyJointDef", b2PulleyJointDef);
             b2PulleyJoint = (function (_super) {
                 __extends(b2PulleyJoint, _super);
                 function b2PulleyJoint(def) {
@@ -7232,13 +7241,13 @@ System.register("Box2D/Dynamics/Joints/b2PulleyJoint", ["Box2D/Common/b2Settings
             b2PulleyJoint.SolvePositionConstraints_s_PB = new b2Math_21.b2Vec2();
             b2PulleyJoint.GetCurrentLengthA_s_p = new b2Math_21.b2Vec2();
             b2PulleyJoint.GetCurrentLengthB_s_p = new b2Math_21.b2Vec2();
-            exports_28("b2PulleyJoint", b2PulleyJoint);
+            exports_29("b2PulleyJoint", b2PulleyJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2RopeJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_29, context_29) {
+System.register("Box2D/Dynamics/Joints/b2RopeJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_30, context_30) {
     "use strict";
-    var __moduleName = context_29 && context_29.id;
+    var __moduleName = context_30 && context_30.id;
     var b2Settings_19, b2Math_22, b2Joint_10, b2RopeJointDef, b2RopeJoint;
     return {
         setters: [
@@ -7264,7 +7273,7 @@ System.register("Box2D/Dynamics/Joints/b2RopeJoint", ["Box2D/Common/b2Settings",
                 }
                 return b2RopeJointDef;
             }(b2Joint_10.b2JointDef));
-            exports_29("b2RopeJointDef", b2RopeJointDef);
+            exports_30("b2RopeJointDef", b2RopeJointDef);
             b2RopeJoint = (function (_super) {
                 __extends(b2RopeJoint, _super);
                 function b2RopeJoint(def) {
@@ -7443,13 +7452,13 @@ System.register("Box2D/Dynamics/Joints/b2RopeJoint", ["Box2D/Common/b2Settings",
             b2RopeJoint.SolveVelocityConstraints_s_vpB = new b2Math_22.b2Vec2();
             b2RopeJoint.SolveVelocityConstraints_s_P = new b2Math_22.b2Vec2();
             b2RopeJoint.SolvePositionConstraints_s_P = new b2Math_22.b2Vec2();
-            exports_29("b2RopeJoint", b2RopeJoint);
+            exports_30("b2RopeJoint", b2RopeJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2WeldJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_30, context_30) {
+System.register("Box2D/Dynamics/Joints/b2WeldJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_31, context_31) {
     "use strict";
-    var __moduleName = context_30 && context_30.id;
+    var __moduleName = context_31 && context_31.id;
     var b2Settings_20, b2Math_23, b2Joint_11, b2WeldJointDef, b2WeldJoint;
     return {
         setters: [
@@ -7484,7 +7493,7 @@ System.register("Box2D/Dynamics/Joints/b2WeldJoint", ["Box2D/Common/b2Settings",
                 };
                 return b2WeldJointDef;
             }(b2Joint_11.b2JointDef));
-            exports_30("b2WeldJointDef", b2WeldJointDef);
+            exports_31("b2WeldJointDef", b2WeldJointDef);
             b2WeldJoint = (function (_super) {
                 __extends(b2WeldJoint, _super);
                 function b2WeldJoint(def) {
@@ -7716,13 +7725,13 @@ System.register("Box2D/Dynamics/Joints/b2WeldJoint", ["Box2D/Common/b2Settings",
             b2WeldJoint.SolvePositionConstraints_s_C1 = new b2Math_23.b2Vec2();
             b2WeldJoint.SolvePositionConstraints_s_P = new b2Math_23.b2Vec2();
             b2WeldJoint.SolvePositionConstraints_s_impulse = new b2Math_23.b2Vec3();
-            exports_30("b2WeldJoint", b2WeldJoint);
+            exports_31("b2WeldJoint", b2WeldJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2WheelJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_31, context_31) {
+System.register("Box2D/Dynamics/Joints/b2WheelJoint", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Dynamics/Joints/b2Joint"], function (exports_32, context_32) {
     "use strict";
-    var __moduleName = context_31 && context_31.id;
+    var __moduleName = context_32 && context_32.id;
     var b2Settings_21, b2Math_24, b2Joint_12, b2WheelJointDef, b2WheelJoint;
     return {
         setters: [
@@ -7760,7 +7769,7 @@ System.register("Box2D/Dynamics/Joints/b2WheelJoint", ["Box2D/Common/b2Settings"
                 };
                 return b2WheelJointDef;
             }(b2Joint_12.b2JointDef));
-            exports_31("b2WheelJointDef", b2WheelJointDef);
+            exports_32("b2WheelJointDef", b2WheelJointDef);
             b2WheelJoint = (function (_super) {
                 __extends(b2WheelJoint, _super);
                 function b2WheelJoint(def) {
@@ -8112,13 +8121,13 @@ System.register("Box2D/Dynamics/Joints/b2WheelJoint", ["Box2D/Common/b2Settings"
             b2WheelJoint.SolveVelocityConstraints_s_P = new b2Math_24.b2Vec2();
             b2WheelJoint.SolvePositionConstraints_s_d = new b2Math_24.b2Vec2();
             b2WheelJoint.SolvePositionConstraints_s_P = new b2Math_24.b2Vec2();
-            exports_31("b2WheelJoint", b2WheelJoint);
+            exports_32("b2WheelJoint", b2WheelJoint);
         }
     };
 });
-System.register("Box2D/Dynamics/Joints/b2JointFactory", ["Box2D/Dynamics/Joints/b2AreaJoint", "Box2D/Dynamics/Joints/b2DistanceJoint", "Box2D/Dynamics/Joints/b2FrictionJoint", "Box2D/Dynamics/Joints/b2GearJoint", "Box2D/Dynamics/Joints/b2MotorJoint", "Box2D/Dynamics/Joints/b2MouseJoint", "Box2D/Dynamics/Joints/b2PrismaticJoint", "Box2D/Dynamics/Joints/b2PulleyJoint", "Box2D/Dynamics/Joints/b2RevoluteJoint", "Box2D/Dynamics/Joints/b2RopeJoint", "Box2D/Dynamics/Joints/b2WeldJoint", "Box2D/Dynamics/Joints/b2WheelJoint"], function (exports_32, context_32) {
+System.register("Box2D/Dynamics/Joints/b2JointFactory", ["Box2D/Dynamics/Joints/b2AreaJoint", "Box2D/Dynamics/Joints/b2DistanceJoint", "Box2D/Dynamics/Joints/b2FrictionJoint", "Box2D/Dynamics/Joints/b2GearJoint", "Box2D/Dynamics/Joints/b2MotorJoint", "Box2D/Dynamics/Joints/b2MouseJoint", "Box2D/Dynamics/Joints/b2PrismaticJoint", "Box2D/Dynamics/Joints/b2PulleyJoint", "Box2D/Dynamics/Joints/b2RevoluteJoint", "Box2D/Dynamics/Joints/b2RopeJoint", "Box2D/Dynamics/Joints/b2WeldJoint", "Box2D/Dynamics/Joints/b2WheelJoint"], function (exports_33, context_33) {
     "use strict";
-    var __moduleName = context_32 && context_32.id;
+    var __moduleName = context_33 && context_33.id;
     var b2AreaJoint_1, b2DistanceJoint_2, b2FrictionJoint_1, b2GearJoint_1, b2MotorJoint_1, b2MouseJoint_1, b2PrismaticJoint_1, b2PulleyJoint_1, b2RevoluteJoint_1, b2RopeJoint_1, b2WeldJoint_1, b2WheelJoint_1, b2JointFactory;
     return {
         setters: [
@@ -8211,13 +8220,13 @@ System.register("Box2D/Dynamics/Joints/b2JointFactory", ["Box2D/Dynamics/Joints/
                 };
                 return b2JointFactory;
             }());
-            exports_32("b2JointFactory", b2JointFactory);
+            exports_33("b2JointFactory", b2JointFactory);
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2ContactSolver", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision", "Box2D/Dynamics/b2TimeStep"], function (exports_33, context_33) {
+System.register("Box2D/Dynamics/Contacts/b2ContactSolver", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision", "Box2D/Dynamics/b2TimeStep"], function (exports_34, context_34) {
     "use strict";
-    var __moduleName = context_33 && context_33.id;
+    var __moduleName = context_34 && context_34.id;
     var b2Settings_22, b2Math_25, b2Collision_3, b2TimeStep_1, b2VelocityConstraintPoint, b2ContactVelocityConstraint, b2ContactPositionConstraint, b2ContactSolverDef, b2PositionSolverManifold, b2ContactSolver;
     return {
         setters: [
@@ -8250,7 +8259,7 @@ System.register("Box2D/Dynamics/Contacts/b2ContactSolver", ["Box2D/Common/b2Sett
                 };
                 return b2VelocityConstraintPoint;
             }());
-            exports_33("b2VelocityConstraintPoint", b2VelocityConstraintPoint);
+            exports_34("b2VelocityConstraintPoint", b2VelocityConstraintPoint);
             b2ContactVelocityConstraint = (function () {
                 function b2ContactVelocityConstraint() {
                     this.points = b2VelocityConstraintPoint.MakeArray(b2Settings_22.b2_maxManifoldPoints);
@@ -8275,7 +8284,7 @@ System.register("Box2D/Dynamics/Contacts/b2ContactSolver", ["Box2D/Common/b2Sett
                 };
                 return b2ContactVelocityConstraint;
             }());
-            exports_33("b2ContactVelocityConstraint", b2ContactVelocityConstraint);
+            exports_34("b2ContactVelocityConstraint", b2ContactVelocityConstraint);
             b2ContactPositionConstraint = (function () {
                 function b2ContactPositionConstraint() {
                     this.localPoints = b2Math_25.b2Vec2.MakeArray(b2Settings_22.b2_maxManifoldPoints);
@@ -8299,7 +8308,7 @@ System.register("Box2D/Dynamics/Contacts/b2ContactSolver", ["Box2D/Common/b2Sett
                 };
                 return b2ContactPositionConstraint;
             }());
-            exports_33("b2ContactPositionConstraint", b2ContactPositionConstraint);
+            exports_34("b2ContactPositionConstraint", b2ContactPositionConstraint);
             b2ContactSolverDef = (function () {
                 function b2ContactSolverDef() {
                     this.step = new b2TimeStep_1.b2TimeStep();
@@ -8311,7 +8320,7 @@ System.register("Box2D/Dynamics/Contacts/b2ContactSolver", ["Box2D/Common/b2Sett
                 }
                 return b2ContactSolverDef;
             }());
-            exports_33("b2ContactSolverDef", b2ContactSolverDef);
+            exports_34("b2ContactSolverDef", b2ContactSolverDef);
             b2PositionSolverManifold = (function () {
                 function b2PositionSolverManifold() {
                     this.normal = new b2Math_25.b2Vec2();
@@ -8360,7 +8369,7 @@ System.register("Box2D/Dynamics/Contacts/b2ContactSolver", ["Box2D/Common/b2Sett
             b2PositionSolverManifold.Initialize_s_pointB = new b2Math_25.b2Vec2();
             b2PositionSolverManifold.Initialize_s_planePoint = new b2Math_25.b2Vec2();
             b2PositionSolverManifold.Initialize_s_clipPoint = new b2Math_25.b2Vec2();
-            exports_33("b2PositionSolverManifold", b2PositionSolverManifold);
+            exports_34("b2PositionSolverManifold", b2PositionSolverManifold);
             b2ContactSolver = (function () {
                 function b2ContactSolver() {
                     this.m_step = new b2TimeStep_1.b2TimeStep();
@@ -8847,20 +8856,20 @@ System.register("Box2D/Dynamics/Contacts/b2ContactSolver", ["Box2D/Common/b2Sett
             b2ContactSolver.SolveTOIPositionConstraints_s_rA = new b2Math_25.b2Vec2();
             b2ContactSolver.SolveTOIPositionConstraints_s_rB = new b2Math_25.b2Vec2();
             b2ContactSolver.SolveTOIPositionConstraints_s_P = new b2Math_25.b2Vec2();
-            exports_33("b2ContactSolver", b2ContactSolver);
+            exports_34("b2ContactSolver", b2ContactSolver);
         }
     };
 });
-System.register("Box2D/Particle/b2Particle", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Draw"], function (exports_34, context_34) {
+System.register("Box2D/Particle/b2Particle", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Draw"], function (exports_35, context_35) {
     "use strict";
-    var __moduleName = context_34 && context_34.id;
+    var __moduleName = context_35 && context_35.id;
     function b2CalculateParticleIterations(gravity, radius, timeStep) {
         var B2_MAX_RECOMMENDED_PARTICLE_ITERATIONS = 8;
         var B2_RADIUS_THRESHOLD = 0.01;
         var iterations = Math.ceil(Math.sqrt(gravity / (B2_RADIUS_THRESHOLD * radius)) * timeStep);
         return b2Math_26.b2Clamp(iterations, 1, B2_MAX_RECOMMENDED_PARTICLE_ITERATIONS);
     }
-    exports_34("b2CalculateParticleIterations", b2CalculateParticleIterations);
+    exports_35("b2CalculateParticleIterations", b2CalculateParticleIterations);
     var b2Settings_23, b2Math_26, b2Draw_1, b2ParticleDef, b2ParticleHandle;
     return {
         setters: [
@@ -8888,7 +8897,7 @@ System.register("Box2D/Particle/b2Particle", ["Box2D/Common/b2Settings", "Box2D/
                 }
                 return b2ParticleDef;
             }());
-            exports_34("b2ParticleDef", b2ParticleDef);
+            exports_35("b2ParticleDef", b2ParticleDef);
             b2ParticleHandle = (function () {
                 function b2ParticleHandle() {
                     this.m_index = b2Settings_23.b2_invalidParticleIndex;
@@ -8897,13 +8906,13 @@ System.register("Box2D/Particle/b2Particle", ["Box2D/Common/b2Settings", "Box2D/
                 b2ParticleHandle.prototype.SetIndex = function (index) { this.m_index = index; };
                 return b2ParticleHandle;
             }());
-            exports_34("b2ParticleHandle", b2ParticleHandle);
+            exports_35("b2ParticleHandle", b2ParticleHandle);
         }
     };
 });
-System.register("Box2D/Particle/b2StackQueue", ["Box2D/Common/b2Settings"], function (exports_35, context_35) {
+System.register("Box2D/Particle/b2StackQueue", ["Box2D/Common/b2Settings"], function (exports_36, context_36) {
     "use strict";
-    var __moduleName = context_35 && context_35.id;
+    var __moduleName = context_36 && context_36.id;
     function b2Assert(condition) { }
     var b2Settings_24, b2StackQueue;
     return {
@@ -8956,13 +8965,13 @@ System.register("Box2D/Particle/b2StackQueue", ["Box2D/Common/b2Settings"], func
                 };
                 return b2StackQueue;
             }());
-            exports_35("b2StackQueue", b2StackQueue);
+            exports_36("b2StackQueue", b2StackQueue);
         }
     };
 });
-System.register("Box2D/Particle/b2VoronoiDiagram", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Particle/b2StackQueue"], function (exports_36, context_36) {
+System.register("Box2D/Particle/b2VoronoiDiagram", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Particle/b2StackQueue"], function (exports_37, context_37) {
     "use strict";
-    var __moduleName = context_36 && context_36.id;
+    var __moduleName = context_37 && context_37.id;
     function b2Assert(condition) { }
     var b2Settings_25, b2Math_27, b2StackQueue_1, b2VoronoiDiagram;
     return {
@@ -9136,7 +9145,7 @@ System.register("Box2D/Particle/b2VoronoiDiagram", ["Box2D/Common/b2Settings", "
                 };
                 return b2VoronoiDiagram;
             }());
-            exports_36("b2VoronoiDiagram", b2VoronoiDiagram);
+            exports_37("b2VoronoiDiagram", b2VoronoiDiagram);
             (function (b2VoronoiDiagram) {
                 var Generator = (function () {
                     function Generator() {
@@ -9162,13 +9171,13 @@ System.register("Box2D/Particle/b2VoronoiDiagram", ["Box2D/Common/b2Settings", "
                 }());
                 b2VoronoiDiagram.Task = Task;
             })(b2VoronoiDiagram || (b2VoronoiDiagram = {}));
-            exports_36("b2VoronoiDiagram", b2VoronoiDiagram);
+            exports_37("b2VoronoiDiagram", b2VoronoiDiagram);
         }
     };
 });
-System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Draw", "Box2D/Collision/b2Collision", "Box2D/Collision/Shapes/b2Shape", "Box2D/Collision/Shapes/b2EdgeShape", "Box2D/Dynamics/b2TimeStep", "Box2D/Dynamics/b2WorldCallbacks", "Box2D/Particle/b2Particle", "Box2D/Particle/b2ParticleGroup", "Box2D/Particle/b2VoronoiDiagram"], function (exports_37, context_37) {
+System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Draw", "Box2D/Collision/b2Collision", "Box2D/Collision/Shapes/b2Shape", "Box2D/Collision/Shapes/b2EdgeShape", "Box2D/Dynamics/b2TimeStep", "Box2D/Dynamics/b2WorldCallbacks", "Box2D/Particle/b2Particle", "Box2D/Particle/b2ParticleGroup", "Box2D/Particle/b2VoronoiDiagram"], function (exports_38, context_38) {
     "use strict";
-    var __moduleName = context_37 && context_37.id;
+    var __moduleName = context_38 && context_38.id;
     function b2Assert(condition) { }
     function std_iter_swap(array, a, b) {
         var tmp = array[a];
@@ -9383,7 +9392,7 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
                 };
                 return b2GrowableBuffer;
             }());
-            exports_37("b2GrowableBuffer", b2GrowableBuffer);
+            exports_38("b2GrowableBuffer", b2GrowableBuffer);
             b2FixtureParticleQueryCallback = (function (_super) {
                 __extends(b2FixtureParticleQueryCallback, _super);
                 function b2FixtureParticleQueryCallback(system) {
@@ -9418,7 +9427,7 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
                 };
                 return b2FixtureParticleQueryCallback;
             }(b2WorldCallbacks_1.b2QueryCallback));
-            exports_37("b2FixtureParticleQueryCallback", b2FixtureParticleQueryCallback);
+            exports_38("b2FixtureParticleQueryCallback", b2FixtureParticleQueryCallback);
             b2ParticleContact = (function () {
                 function b2ParticleContact() {
                     this.indexA = 0;
@@ -9469,7 +9478,7 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
                 };
                 return b2ParticleContact;
             }());
-            exports_37("b2ParticleContact", b2ParticleContact);
+            exports_38("b2ParticleContact", b2ParticleContact);
             b2ParticleBodyContact = (function () {
                 function b2ParticleBodyContact() {
                     this.index = 0;
@@ -9481,7 +9490,7 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
                 }
                 return b2ParticleBodyContact;
             }());
-            exports_37("b2ParticleBodyContact", b2ParticleBodyContact);
+            exports_38("b2ParticleBodyContact", b2ParticleBodyContact);
             b2ParticlePair = (function () {
                 function b2ParticlePair() {
                     this.indexA = 0;
@@ -9492,7 +9501,7 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
                 }
                 return b2ParticlePair;
             }());
-            exports_37("b2ParticlePair", b2ParticlePair);
+            exports_38("b2ParticlePair", b2ParticlePair);
             b2ParticleTriad = (function () {
                 function b2ParticleTriad() {
                     this.indexA = 0;
@@ -9510,7 +9519,7 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
                 }
                 return b2ParticleTriad;
             }());
-            exports_37("b2ParticleTriad", b2ParticleTriad);
+            exports_38("b2ParticleTriad", b2ParticleTriad);
             b2ParticleSystemDef = (function () {
                 function b2ParticleSystemDef() {
                     this.strictContactCheck = false;
@@ -9564,7 +9573,7 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
                 };
                 return b2ParticleSystemDef;
             }());
-            exports_37("b2ParticleSystemDef", b2ParticleSystemDef);
+            exports_38("b2ParticleSystemDef", b2ParticleSystemDef);
             b2ParticleSystem = (function () {
                 function b2ParticleSystem(def, world) {
                     this.m_paused = false;
@@ -12295,7 +12304,7 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
             b2ParticleSystem.RemoveSpuriousBodyContacts_s_n = new b2Math_28.b2Vec2();
             b2ParticleSystem.RemoveSpuriousBodyContacts_s_pos = new b2Math_28.b2Vec2();
             b2ParticleSystem.RemoveSpuriousBodyContacts_s_normal = new b2Math_28.b2Vec2();
-            exports_37("b2ParticleSystem", b2ParticleSystem);
+            exports_38("b2ParticleSystem", b2ParticleSystem);
             (function (b2ParticleSystem) {
                 var UserOverridableBuffer = (function () {
                     function UserOverridableBuffer() {
@@ -12690,13 +12699,13 @@ System.register("Box2D/Particle/b2ParticleSystem", ["Box2D/Common/b2Settings", "
                 SolveCollisionCallback.ReportFixtureAndParticle_s_f = new b2Math_28.b2Vec2();
                 b2ParticleSystem.SolveCollisionCallback = SolveCollisionCallback;
             })(b2ParticleSystem || (b2ParticleSystem = {}));
-            exports_37("b2ParticleSystem", b2ParticleSystem);
+            exports_38("b2ParticleSystem", b2ParticleSystem);
         }
     };
 });
-System.register("Box2D/Particle/b2ParticleGroup", ["Box2D/Common/b2Math", "Box2D/Common/b2Draw"], function (exports_38, context_38) {
+System.register("Box2D/Particle/b2ParticleGroup", ["Box2D/Common/b2Math", "Box2D/Common/b2Draw"], function (exports_39, context_39) {
     "use strict";
-    var __moduleName = context_38 && context_38.id;
+    var __moduleName = context_39 && context_39.id;
     var b2Math_29, b2Draw_3, b2ParticleGroupDef, b2ParticleGroup;
     return {
         setters: [
@@ -12730,7 +12739,7 @@ System.register("Box2D/Particle/b2ParticleGroup", ["Box2D/Common/b2Math", "Box2D
                 }
                 return b2ParticleGroupDef;
             }());
-            exports_38("b2ParticleGroupDef", b2ParticleGroupDef);
+            exports_39("b2ParticleGroupDef", b2ParticleGroupDef);
             b2ParticleGroup = (function () {
                 function b2ParticleGroup() {
                     this.m_system = null;
@@ -12866,13 +12875,13 @@ System.register("Box2D/Particle/b2ParticleGroup", ["Box2D/Common/b2Math", "Box2D
                 return b2ParticleGroup;
             }());
             b2ParticleGroup.GetLinearVelocityFromWorldPoint_s_t0 = new b2Math_29.b2Vec2();
-            exports_38("b2ParticleGroup", b2ParticleGroup);
+            exports_39("b2ParticleGroup", b2ParticleGroup);
         }
     };
 });
-System.register("Box2D/Dynamics/b2WorldCallbacks", ["Box2D/Common/b2Settings"], function (exports_39, context_39) {
+System.register("Box2D/Dynamics/b2WorldCallbacks", ["Box2D/Common/b2Settings"], function (exports_40, context_40) {
     "use strict";
-    var __moduleName = context_39 && context_39.id;
+    var __moduleName = context_40 && context_40.id;
     var b2Settings_28, b2DestructionListener, b2ContactFilter, b2ContactImpulse, b2ContactListener, b2QueryCallback, b2RayCastCallback;
     return {
         setters: [
@@ -12890,7 +12899,7 @@ System.register("Box2D/Dynamics/b2WorldCallbacks", ["Box2D/Common/b2Settings"], 
                 b2DestructionListener.prototype.SayGoodbyeParticle = function (system, index) { };
                 return b2DestructionListener;
             }());
-            exports_39("b2DestructionListener", b2DestructionListener);
+            exports_40("b2DestructionListener", b2DestructionListener);
             b2ContactFilter = (function () {
                 function b2ContactFilter() {
                 }
@@ -12920,7 +12929,7 @@ System.register("Box2D/Dynamics/b2WorldCallbacks", ["Box2D/Common/b2Settings"], 
                 return b2ContactFilter;
             }());
             b2ContactFilter.b2_defaultFilter = new b2ContactFilter();
-            exports_39("b2ContactFilter", b2ContactFilter);
+            exports_40("b2ContactFilter", b2ContactFilter);
             b2ContactImpulse = (function () {
                 function b2ContactImpulse() {
                     this.normalImpulses = b2Settings_28.b2MakeNumberArray(b2Settings_28.b2_maxManifoldPoints);
@@ -12929,7 +12938,7 @@ System.register("Box2D/Dynamics/b2WorldCallbacks", ["Box2D/Common/b2Settings"], 
                 }
                 return b2ContactImpulse;
             }());
-            exports_39("b2ContactImpulse", b2ContactImpulse);
+            exports_40("b2ContactImpulse", b2ContactImpulse);
             b2ContactListener = (function () {
                 function b2ContactListener() {
                 }
@@ -12944,7 +12953,7 @@ System.register("Box2D/Dynamics/b2WorldCallbacks", ["Box2D/Common/b2Settings"], 
                 return b2ContactListener;
             }());
             b2ContactListener.b2_defaultListener = new b2ContactListener();
-            exports_39("b2ContactListener", b2ContactListener);
+            exports_40("b2ContactListener", b2ContactListener);
             b2QueryCallback = (function () {
                 function b2QueryCallback() {
                 }
@@ -12959,7 +12968,7 @@ System.register("Box2D/Dynamics/b2WorldCallbacks", ["Box2D/Common/b2Settings"], 
                 };
                 return b2QueryCallback;
             }());
-            exports_39("b2QueryCallback", b2QueryCallback);
+            exports_40("b2QueryCallback", b2QueryCallback);
             b2RayCastCallback = (function () {
                 function b2RayCastCallback() {
                 }
@@ -12974,13 +12983,13 @@ System.register("Box2D/Dynamics/b2WorldCallbacks", ["Box2D/Common/b2Settings"], 
                 };
                 return b2RayCastCallback;
             }());
-            exports_39("b2RayCastCallback", b2RayCastCallback);
+            exports_40("b2RayCastCallback", b2RayCastCallback);
         }
     };
 });
-System.register("Box2D/Dynamics/b2Island", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Timer", "Box2D/Dynamics/Contacts/b2ContactSolver", "Box2D/Dynamics/b2TimeStep", "Box2D/Dynamics/b2WorldCallbacks"], function (exports_40, context_40) {
+System.register("Box2D/Dynamics/b2Island", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Timer", "Box2D/Dynamics/Contacts/b2ContactSolver", "Box2D/Dynamics/b2TimeStep", "Box2D/Dynamics/b2WorldCallbacks"], function (exports_41, context_41) {
     "use strict";
-    var __moduleName = context_40 && context_40.id;
+    var __moduleName = context_41 && context_41.id;
     var b2Settings_29, b2Settings_30, b2Settings_31, b2Settings_32, b2Math_30, b2Timer_2, b2ContactSolver_1, b2TimeStep_3, b2WorldCallbacks_2, b2Island;
     return {
         setters: [
@@ -13279,13 +13288,13 @@ System.register("Box2D/Dynamics/b2Island", ["Box2D/Common/b2Settings", "Box2D/Co
             b2Island.s_contactSolver = new b2ContactSolver_1.b2ContactSolver();
             b2Island.s_translation = new b2Math_30.b2Vec2();
             b2Island.s_impulse = new b2WorldCallbacks_2.b2ContactImpulse();
-            exports_40("b2Island", b2Island);
+            exports_41("b2Island", b2Island);
         }
     };
 });
-System.register("Box2D/Dynamics/b2World", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Timer", "Box2D/Common/b2Draw", "Box2D/Collision/b2Collision", "Box2D/Collision/b2TimeOfImpact", "Box2D/Dynamics/Joints/b2JointFactory", "Box2D/Dynamics/b2Body", "Box2D/Dynamics/b2ContactManager", "Box2D/Dynamics/b2Island", "Box2D/Dynamics/b2TimeStep", "Box2D/Dynamics/b2WorldCallbacks", "Box2D/Particle/b2Particle", "Box2D/Particle/b2ParticleSystem"], function (exports_41, context_41) {
+System.register("Box2D/Dynamics/b2World", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Timer", "Box2D/Common/b2Draw", "Box2D/Collision/b2Collision", "Box2D/Collision/b2TimeOfImpact", "Box2D/Dynamics/Joints/b2JointFactory", "Box2D/Dynamics/b2Body", "Box2D/Dynamics/b2ContactManager", "Box2D/Dynamics/b2Island", "Box2D/Dynamics/b2TimeStep", "Box2D/Dynamics/b2WorldCallbacks", "Box2D/Particle/b2Particle", "Box2D/Particle/b2ParticleSystem"], function (exports_42, context_42) {
     "use strict";
-    var __moduleName = context_41 && context_41.id;
+    var __moduleName = context_42 && context_42.id;
     var b2Settings_33, b2Math_31, b2Timer_3, b2Draw_4, b2Collision_5, b2TimeOfImpact_1, b2JointFactory_1, b2Body_1, b2ContactManager_1, b2Island_1, b2TimeStep_4, b2WorldCallbacks_3, b2WorldCallbacks_4, b2Settings_34, b2Particle_2, b2ParticleSystem_1, b2World;
     return {
         setters: [
@@ -14390,13 +14399,13 @@ System.register("Box2D/Dynamics/b2World", ["Box2D/Common/b2Settings", "Box2D/Com
             b2World.SolveTOI_s_backup2 = new b2Math_31.b2Sweep();
             b2World.SolveTOI_s_toi_input = new b2TimeOfImpact_1.b2TOIInput();
             b2World.SolveTOI_s_toi_output = new b2TimeOfImpact_1.b2TOIOutput();
-            exports_41("b2World", b2World);
+            exports_42("b2World", b2World);
         }
     };
 });
-System.register("Box2D/Dynamics/b2Body", ["Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape", "Box2D/Dynamics/b2Fixture"], function (exports_42, context_42) {
+System.register("Box2D/Dynamics/b2Body", ["Box2D/Common/b2Math", "Box2D/Collision/Shapes/b2Shape", "Box2D/Dynamics/b2Fixture"], function (exports_43, context_43) {
     "use strict";
-    var __moduleName = context_42 && context_42.id;
+    var __moduleName = context_43 && context_43.id;
     var b2Math_32, b2Shape_8, b2Fixture_1, b2BodyDef, b2Body;
     return {
         setters: [
@@ -14430,7 +14439,7 @@ System.register("Box2D/Dynamics/b2Body", ["Box2D/Common/b2Math", "Box2D/Collisio
                 }
                 return b2BodyDef;
             }());
-            exports_42("b2BodyDef", b2BodyDef);
+            exports_43("b2BodyDef", b2BodyDef);
             b2Body = (function () {
                 function b2Body(bd, world) {
                     this.m_type = 0;
@@ -15093,21 +15102,21 @@ System.register("Box2D/Dynamics/b2Body", ["Box2D/Common/b2Math", "Box2D/Collisio
             b2Body.ResetMassData_s_oldCenter = new b2Math_32.b2Vec2();
             b2Body.ResetMassData_s_massData = new b2Shape_8.b2MassData();
             b2Body.SynchronizeFixtures_s_xf1 = new b2Math_32.b2Transform();
-            exports_42("b2Body", b2Body);
+            exports_43("b2Body", b2Body);
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2Contact", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision", "Box2D/Collision/b2TimeOfImpact"], function (exports_43, context_43) {
+System.register("Box2D/Dynamics/Contacts/b2Contact", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision", "Box2D/Collision/b2TimeOfImpact"], function (exports_44, context_44) {
     "use strict";
-    var __moduleName = context_43 && context_43.id;
+    var __moduleName = context_44 && context_44.id;
     function b2MixFriction(friction1, friction2) {
         return b2Math_33.b2Sqrt(friction1 * friction2);
     }
-    exports_43("b2MixFriction", b2MixFriction);
+    exports_44("b2MixFriction", b2MixFriction);
     function b2MixRestitution(restitution1, restitution2) {
         return restitution1 > restitution2 ? restitution1 : restitution2;
     }
-    exports_43("b2MixRestitution", b2MixRestitution);
+    exports_44("b2MixRestitution", b2MixRestitution);
     var b2Settings_35, b2Math_33, b2Collision_6, b2Collision_7, b2TimeOfImpact_2, b2ContactEdge, b2Contact;
     return {
         setters: [
@@ -15135,7 +15144,7 @@ System.register("Box2D/Dynamics/Contacts/b2Contact", ["Box2D/Common/b2Settings",
                 }
                 return b2ContactEdge;
             }());
-            exports_43("b2ContactEdge", b2ContactEdge);
+            exports_44("b2ContactEdge", b2ContactEdge);
             b2Contact = (function () {
                 function b2Contact() {
                     this.m_islandFlag = false;
@@ -15317,13 +15326,13 @@ System.register("Box2D/Dynamics/Contacts/b2Contact", ["Box2D/Common/b2Settings",
             }());
             b2Contact.ComputeTOI_s_input = new b2TimeOfImpact_2.b2TOIInput();
             b2Contact.ComputeTOI_s_output = new b2TimeOfImpact_2.b2TOIOutput();
-            exports_43("b2Contact", b2Contact);
+            exports_44("b2Contact", b2Contact);
         }
     };
 });
-System.register("Box2D/Collision/b2CollideCircle", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math"], function (exports_44, context_44) {
+System.register("Box2D/Collision/b2CollideCircle", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math"], function (exports_45, context_45) {
     "use strict";
-    var __moduleName = context_44 && context_44.id;
+    var __moduleName = context_45 && context_45.id;
     function b2CollideCircles(manifold, circleA, xfA, circleB, xfB) {
         manifold.pointCount = 0;
         var pA = b2Math_34.b2Transform.MulXV(xfA, circleA.m_p, b2CollideCircles_s_pA);
@@ -15340,7 +15349,7 @@ System.register("Box2D/Collision/b2CollideCircle", ["Box2D/Common/b2Settings", "
         manifold.points[0].localPoint.Copy(circleB.m_p);
         manifold.points[0].id.key = 0;
     }
-    exports_44("b2CollideCircles", b2CollideCircles);
+    exports_45("b2CollideCircles", b2CollideCircles);
     function b2CollidePolygonAndCircle(manifold, polygonA, xfA, circleB, xfB) {
         manifold.pointCount = 0;
         var c = b2Math_34.b2Transform.MulXV(xfB, circleB.m_p, b2CollidePolygonAndCircle_s_c);
@@ -15412,7 +15421,7 @@ System.register("Box2D/Collision/b2CollideCircle", ["Box2D/Common/b2Settings", "
             manifold.points[0].id.key = 0;
         }
     }
-    exports_44("b2CollidePolygonAndCircle", b2CollidePolygonAndCircle);
+    exports_45("b2CollidePolygonAndCircle", b2CollidePolygonAndCircle);
     var b2Settings_36, b2Math_34, b2CollideCircles_s_pA, b2CollideCircles_s_pB, b2CollidePolygonAndCircle_s_c, b2CollidePolygonAndCircle_s_cLocal, b2CollidePolygonAndCircle_s_faceCenter;
     return {
         setters: [
@@ -15432,9 +15441,9 @@ System.register("Box2D/Collision/b2CollideCircle", ["Box2D/Common/b2Settings", "
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2CircleContact", ["Box2D/Collision/b2CollideCircle", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_45, context_45) {
+System.register("Box2D/Dynamics/Contacts/b2CircleContact", ["Box2D/Collision/b2CollideCircle", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_46, context_46) {
     "use strict";
-    var __moduleName = context_45 && context_45.id;
+    var __moduleName = context_46 && context_46.id;
     var b2CollideCircle_1, b2Contact_1, b2CircleContact;
     return {
         setters: [
@@ -15466,13 +15475,13 @@ System.register("Box2D/Dynamics/Contacts/b2CircleContact", ["Box2D/Collision/b2C
                 };
                 return b2CircleContact;
             }(b2Contact_1.b2Contact));
-            exports_45("b2CircleContact", b2CircleContact);
+            exports_46("b2CircleContact", b2CircleContact);
         }
     };
 });
-System.register("Box2D/Collision/b2CollidePolygon", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision"], function (exports_46, context_46) {
+System.register("Box2D/Collision/b2CollidePolygon", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision"], function (exports_47, context_47) {
     "use strict";
-    var __moduleName = context_46 && context_46.id;
+    var __moduleName = context_47 && context_47.id;
     function b2EdgeSeparation(poly1, xf1, edge1, poly2, xf2) {
         var vertices1 = poly1.m_vertices;
         var normals1 = poly1.m_normals;
@@ -15669,7 +15678,7 @@ System.register("Box2D/Collision/b2CollidePolygon", ["Box2D/Common/b2Settings", 
         }
         manifold.pointCount = pointCount;
     }
-    exports_46("b2CollidePolygons", b2CollidePolygons);
+    exports_47("b2CollidePolygons", b2CollidePolygons);
     var b2Settings_37, b2Math_35, b2Collision_8, b2EdgeSeparation_s_normal1World, b2EdgeSeparation_s_normal1, b2EdgeSeparation_s_v1, b2EdgeSeparation_s_v2, b2FindMaxSeparation_s_d, b2FindMaxSeparation_s_dLocal1, b2FindIncidentEdge_s_normal1, b2CollidePolygons_s_incidentEdge, b2CollidePolygons_s_clipPoints1, b2CollidePolygons_s_clipPoints2, b2CollidePolygons_s_edgeA, b2CollidePolygons_s_edgeB, b2CollidePolygons_s_localTangent, b2CollidePolygons_s_localNormal, b2CollidePolygons_s_planePoint, b2CollidePolygons_s_normal, b2CollidePolygons_s_tangent, b2CollidePolygons_s_ntangent, b2CollidePolygons_s_v11, b2CollidePolygons_s_v12;
     return {
         setters: [
@@ -15707,9 +15716,9 @@ System.register("Box2D/Collision/b2CollidePolygon", ["Box2D/Common/b2Settings", 
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2PolygonContact", ["Box2D/Collision/b2CollidePolygon", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_47, context_47) {
+System.register("Box2D/Dynamics/Contacts/b2PolygonContact", ["Box2D/Collision/b2CollidePolygon", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_48, context_48) {
     "use strict";
-    var __moduleName = context_47 && context_47.id;
+    var __moduleName = context_48 && context_48.id;
     var b2CollidePolygon_1, b2Contact_2, b2PolygonContact;
     return {
         setters: [
@@ -15741,13 +15750,13 @@ System.register("Box2D/Dynamics/Contacts/b2PolygonContact", ["Box2D/Collision/b2
                 };
                 return b2PolygonContact;
             }(b2Contact_2.b2Contact));
-            exports_47("b2PolygonContact", b2PolygonContact);
+            exports_48("b2PolygonContact", b2PolygonContact);
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2PolygonAndCircleContact", ["Box2D/Collision/b2CollideCircle", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_48, context_48) {
+System.register("Box2D/Dynamics/Contacts/b2PolygonAndCircleContact", ["Box2D/Collision/b2CollideCircle", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_49, context_49) {
     "use strict";
-    var __moduleName = context_48 && context_48.id;
+    var __moduleName = context_49 && context_49.id;
     var b2CollideCircle_2, b2Contact_3, b2PolygonAndCircleContact;
     return {
         setters: [
@@ -15779,13 +15788,13 @@ System.register("Box2D/Dynamics/Contacts/b2PolygonAndCircleContact", ["Box2D/Col
                 };
                 return b2PolygonAndCircleContact;
             }(b2Contact_3.b2Contact));
-            exports_48("b2PolygonAndCircleContact", b2PolygonAndCircleContact);
+            exports_49("b2PolygonAndCircleContact", b2PolygonAndCircleContact);
         }
     };
 });
-System.register("Box2D/Collision/b2CollideEdge", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision"], function (exports_49, context_49) {
+System.register("Box2D/Collision/b2CollideEdge", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Collision/b2Collision"], function (exports_50, context_50) {
     "use strict";
-    var __moduleName = context_49 && context_49.id;
+    var __moduleName = context_50 && context_50.id;
     function b2CollideEdgeAndCircle(manifold, edgeA, xfA, circleB, xfB) {
         manifold.pointCount = 0;
         var Q = b2Math_36.b2Transform.MulTXV(xfA, b2Math_36.b2Transform.MulXV(xfB, circleB.m_p, b2Math_36.b2Vec2.s_t0), b2CollideEdgeAndCircle_s_Q);
@@ -15873,12 +15882,12 @@ System.register("Box2D/Collision/b2CollideEdge", ["Box2D/Common/b2Settings", "Bo
         manifold.points[0].id.Copy(id);
         manifold.points[0].localPoint.Copy(circleB.m_p);
     }
-    exports_49("b2CollideEdgeAndCircle", b2CollideEdgeAndCircle);
+    exports_50("b2CollideEdgeAndCircle", b2CollideEdgeAndCircle);
     function b2CollideEdgeAndPolygon(manifold, edgeA, xfA, polygonB, xfB) {
         var collider = b2CollideEdgeAndPolygon_s_collider;
         collider.Collide(manifold, edgeA, xfA, polygonB, xfB);
     }
-    exports_49("b2CollideEdgeAndPolygon", b2CollideEdgeAndPolygon);
+    exports_50("b2CollideEdgeAndPolygon", b2CollideEdgeAndPolygon);
     var b2Settings_38, b2Math_36, b2Collision_9, b2Collision_10, b2CollideEdgeAndCircle_s_Q, b2CollideEdgeAndCircle_s_e, b2CollideEdgeAndCircle_s_d, b2CollideEdgeAndCircle_s_e1, b2CollideEdgeAndCircle_s_e2, b2CollideEdgeAndCircle_s_P, b2CollideEdgeAndCircle_s_n, b2CollideEdgeAndCircle_s_id, b2EPAxis, b2TempPolygon, b2ReferenceFace, b2EPCollider, b2CollideEdgeAndPolygon_s_collider;
     return {
         setters: [
@@ -16308,9 +16317,9 @@ System.register("Box2D/Collision/b2CollideEdge", ["Box2D/Common/b2Settings", "Bo
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2EdgeAndCircleContact", ["Box2D/Collision/b2CollideEdge", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_50, context_50) {
+System.register("Box2D/Dynamics/Contacts/b2EdgeAndCircleContact", ["Box2D/Collision/b2CollideEdge", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_51, context_51) {
     "use strict";
-    var __moduleName = context_50 && context_50.id;
+    var __moduleName = context_51 && context_51.id;
     var b2CollideEdge_1, b2Contact_4, b2EdgeAndCircleContact;
     return {
         setters: [
@@ -16342,13 +16351,13 @@ System.register("Box2D/Dynamics/Contacts/b2EdgeAndCircleContact", ["Box2D/Collis
                 };
                 return b2EdgeAndCircleContact;
             }(b2Contact_4.b2Contact));
-            exports_50("b2EdgeAndCircleContact", b2EdgeAndCircleContact);
+            exports_51("b2EdgeAndCircleContact", b2EdgeAndCircleContact);
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact", ["Box2D/Collision/b2CollideEdge", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_51, context_51) {
+System.register("Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact", ["Box2D/Collision/b2CollideEdge", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_52, context_52) {
     "use strict";
-    var __moduleName = context_51 && context_51.id;
+    var __moduleName = context_52 && context_52.id;
     var b2CollideEdge_2, b2Contact_5, b2EdgeAndPolygonContact;
     return {
         setters: [
@@ -16380,13 +16389,13 @@ System.register("Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact", ["Box2D/Colli
                 };
                 return b2EdgeAndPolygonContact;
             }(b2Contact_5.b2Contact));
-            exports_51("b2EdgeAndPolygonContact", b2EdgeAndPolygonContact);
+            exports_52("b2EdgeAndPolygonContact", b2EdgeAndPolygonContact);
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2ChainAndCircleContact", ["Box2D/Collision/b2CollideEdge", "Box2D/Collision/Shapes/b2EdgeShape", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_52, context_52) {
+System.register("Box2D/Dynamics/Contacts/b2ChainAndCircleContact", ["Box2D/Collision/b2CollideEdge", "Box2D/Collision/Shapes/b2EdgeShape", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_53, context_53) {
     "use strict";
-    var __moduleName = context_52 && context_52.id;
+    var __moduleName = context_53 && context_53.id;
     var b2CollideEdge_3, b2EdgeShape_3, b2Contact_6, b2ChainAndCircleContact;
     return {
         setters: [
@@ -16425,13 +16434,13 @@ System.register("Box2D/Dynamics/Contacts/b2ChainAndCircleContact", ["Box2D/Colli
                 return b2ChainAndCircleContact;
             }(b2Contact_6.b2Contact));
             b2ChainAndCircleContact.Evaluate_s_edge = new b2EdgeShape_3.b2EdgeShape();
-            exports_52("b2ChainAndCircleContact", b2ChainAndCircleContact);
+            exports_53("b2ChainAndCircleContact", b2ChainAndCircleContact);
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2ChainAndPolygonContact", ["Box2D/Collision/b2CollideEdge", "Box2D/Collision/Shapes/b2EdgeShape", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_53, context_53) {
+System.register("Box2D/Dynamics/Contacts/b2ChainAndPolygonContact", ["Box2D/Collision/b2CollideEdge", "Box2D/Collision/Shapes/b2EdgeShape", "Box2D/Dynamics/Contacts/b2Contact"], function (exports_54, context_54) {
     "use strict";
-    var __moduleName = context_53 && context_53.id;
+    var __moduleName = context_54 && context_54.id;
     var b2CollideEdge_4, b2EdgeShape_4, b2Contact_7, b2ChainAndPolygonContact;
     return {
         setters: [
@@ -16470,13 +16479,13 @@ System.register("Box2D/Dynamics/Contacts/b2ChainAndPolygonContact", ["Box2D/Coll
                 return b2ChainAndPolygonContact;
             }(b2Contact_7.b2Contact));
             b2ChainAndPolygonContact.Evaluate_s_edge = new b2EdgeShape_4.b2EdgeShape();
-            exports_53("b2ChainAndPolygonContact", b2ChainAndPolygonContact);
+            exports_54("b2ChainAndPolygonContact", b2ChainAndPolygonContact);
         }
     };
 });
-System.register("Box2D/Dynamics/Contacts/b2ContactFactory", ["Box2D/Common/b2Settings", "Box2D/Dynamics/Contacts/b2CircleContact", "Box2D/Dynamics/Contacts/b2PolygonContact", "Box2D/Dynamics/Contacts/b2PolygonAndCircleContact", "Box2D/Dynamics/Contacts/b2EdgeAndCircleContact", "Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact", "Box2D/Dynamics/Contacts/b2ChainAndCircleContact", "Box2D/Dynamics/Contacts/b2ChainAndPolygonContact"], function (exports_54, context_54) {
+System.register("Box2D/Dynamics/Contacts/b2ContactFactory", ["Box2D/Common/b2Settings", "Box2D/Dynamics/Contacts/b2CircleContact", "Box2D/Dynamics/Contacts/b2PolygonContact", "Box2D/Dynamics/Contacts/b2PolygonAndCircleContact", "Box2D/Dynamics/Contacts/b2EdgeAndCircleContact", "Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact", "Box2D/Dynamics/Contacts/b2ChainAndCircleContact", "Box2D/Dynamics/Contacts/b2ChainAndPolygonContact"], function (exports_55, context_55) {
     "use strict";
-    var __moduleName = context_54 && context_54.id;
+    var __moduleName = context_55 && context_55.id;
     var b2Settings_39, b2CircleContact_1, b2PolygonContact_1, b2PolygonAndCircleContact_1, b2EdgeAndCircleContact_1, b2EdgeAndPolygonContact_1, b2ChainAndCircleContact_1, b2ChainAndPolygonContact_1, b2ContactRegister, b2ContactFactory;
     return {
         setters: [
@@ -16515,7 +16524,7 @@ System.register("Box2D/Dynamics/Contacts/b2ContactFactory", ["Box2D/Common/b2Set
                 }
                 return b2ContactRegister;
             }());
-            exports_54("b2ContactRegister", b2ContactRegister);
+            exports_55("b2ContactRegister", b2ContactRegister);
             b2ContactFactory = (function () {
                 function b2ContactFactory(allocator) {
                     this.m_allocator = null;
@@ -16592,13 +16601,13 @@ System.register("Box2D/Dynamics/Contacts/b2ContactFactory", ["Box2D/Common/b2Set
                 };
                 return b2ContactFactory;
             }());
-            exports_54("b2ContactFactory", b2ContactFactory);
+            exports_55("b2ContactFactory", b2ContactFactory);
         }
     };
 });
-System.register("Box2D/Dynamics/b2ContactManager", ["Box2D/Collision/b2BroadPhase", "Box2D/Dynamics/Contacts/b2ContactFactory", "Box2D/Dynamics/b2WorldCallbacks"], function (exports_55, context_55) {
+System.register("Box2D/Dynamics/b2ContactManager", ["Box2D/Collision/b2BroadPhase", "Box2D/Dynamics/Contacts/b2ContactFactory", "Box2D/Dynamics/b2WorldCallbacks"], function (exports_56, context_56) {
     "use strict";
-    var __moduleName = context_55 && context_55.id;
+    var __moduleName = context_56 && context_56.id;
     var b2BroadPhase_1, b2ContactFactory_1, b2WorldCallbacks_5, b2ContactManager;
     return {
         setters: [
@@ -16773,20 +16782,20 @@ System.register("Box2D/Dynamics/b2ContactManager", ["Box2D/Collision/b2BroadPhas
                 };
                 return b2ContactManager;
             }());
-            exports_55("b2ContactManager", b2ContactManager);
+            exports_56("b2ContactManager", b2ContactManager);
         }
     };
 });
-System.register("Box2D/Collision/b2BroadPhase", ["Box2D/Collision/b2Collision", "Box2D/Collision/b2DynamicTree"], function (exports_56, context_56) {
+System.register("Box2D/Collision/b2BroadPhase", ["Box2D/Collision/b2Collision", "Box2D/Collision/b2DynamicTree"], function (exports_57, context_57) {
     "use strict";
-    var __moduleName = context_56 && context_56.id;
+    var __moduleName = context_57 && context_57.id;
     function b2PairLessThan(pair1, pair2) {
         if (pair1.proxyA.m_id === pair2.proxyA.m_id) {
             return pair1.proxyB.m_id - pair2.proxyB.m_id;
         }
         return pair1.proxyA.m_id - pair2.proxyA.m_id;
     }
-    exports_56("b2PairLessThan", b2PairLessThan);
+    exports_57("b2PairLessThan", b2PairLessThan);
     var b2Collision_11, b2DynamicTree_1, b2Pair, b2BroadPhase;
     return {
         setters: [
@@ -16805,7 +16814,7 @@ System.register("Box2D/Collision/b2BroadPhase", ["Box2D/Collision/b2Collision", 
                 }
                 return b2Pair;
             }());
-            exports_56("b2Pair", b2Pair);
+            exports_57("b2Pair", b2Pair);
             b2BroadPhase = (function () {
                 function b2BroadPhase() {
                     this.m_tree = new b2DynamicTree_1.b2DynamicTree();
@@ -16931,13 +16940,13 @@ System.register("Box2D/Collision/b2BroadPhase", ["Box2D/Collision/b2Collision", 
                 };
                 return b2BroadPhase;
             }());
-            exports_56("b2BroadPhase", b2BroadPhase);
+            exports_57("b2BroadPhase", b2BroadPhase);
         }
     };
 });
-System.register("Box2D/Rope/b2Rope", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Draw"], function (exports_57, context_57) {
+System.register("Box2D/Rope/b2Rope", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Draw"], function (exports_58, context_58) {
     "use strict";
-    var __moduleName = context_57 && context_57.id;
+    var __moduleName = context_58 && context_58.id;
     var b2Settings_40, b2Math_37, b2Draw_5, b2RopeDef, b2Rope;
     return {
         setters: [
@@ -16964,7 +16973,7 @@ System.register("Box2D/Rope/b2Rope", ["Box2D/Common/b2Settings", "Box2D/Common/b
                 }
                 return b2RopeDef;
             }());
-            exports_57("b2RopeDef", b2RopeDef);
+            exports_58("b2RopeDef", b2RopeDef);
             b2Rope = (function () {
                 function b2Rope() {
                     this.m_count = 0;
@@ -17133,19 +17142,19 @@ System.register("Box2D/Rope/b2Rope", ["Box2D/Common/b2Settings", "Box2D/Common/b
             b2Rope.s_Jd2 = new b2Math_37.b2Vec2();
             b2Rope.s_J1 = new b2Math_37.b2Vec2();
             b2Rope.s_J2 = new b2Math_37.b2Vec2();
-            exports_57("b2Rope", b2Rope);
+            exports_58("b2Rope", b2Rope);
         }
     };
 });
-System.register("Box2D/Box2D", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Draw", "Box2D/Common/b2Timer", "Box2D/Common/b2GrowableStack", "Box2D/Common/b2BlockAllocator", "Box2D/Common/b2StackAllocator", "Box2D/Collision/b2Collision", "Box2D/Collision/b2Distance", "Box2D/Collision/b2BroadPhase", "Box2D/Collision/b2DynamicTree", "Box2D/Collision/b2TimeOfImpact", "Box2D/Collision/b2CollideCircle", "Box2D/Collision/b2CollidePolygon", "Box2D/Collision/b2CollideEdge", "Box2D/Collision/Shapes/b2Shape", "Box2D/Collision/Shapes/b2CircleShape", "Box2D/Collision/Shapes/b2PolygonShape", "Box2D/Collision/Shapes/b2EdgeShape", "Box2D/Collision/Shapes/b2ChainShape", "Box2D/Dynamics/b2Fixture", "Box2D/Dynamics/b2Body", "Box2D/Dynamics/b2World", "Box2D/Dynamics/b2WorldCallbacks", "Box2D/Dynamics/b2Island", "Box2D/Dynamics/b2TimeStep", "Box2D/Dynamics/b2ContactManager", "Box2D/Dynamics/Contacts/b2Contact", "Box2D/Dynamics/Contacts/b2ContactFactory", "Box2D/Dynamics/Contacts/b2ContactSolver", "Box2D/Dynamics/Contacts/b2CircleContact", "Box2D/Dynamics/Contacts/b2PolygonContact", "Box2D/Dynamics/Contacts/b2PolygonAndCircleContact", "Box2D/Dynamics/Contacts/b2EdgeAndCircleContact", "Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact", "Box2D/Dynamics/Contacts/b2ChainAndCircleContact", "Box2D/Dynamics/Contacts/b2ChainAndPolygonContact", "Box2D/Dynamics/Joints/b2Joint", "Box2D/Dynamics/Joints/b2JointFactory", "Box2D/Dynamics/Joints/b2AreaJoint", "Box2D/Dynamics/Joints/b2DistanceJoint", "Box2D/Dynamics/Joints/b2FrictionJoint", "Box2D/Dynamics/Joints/b2GearJoint", "Box2D/Dynamics/Joints/b2MotorJoint", "Box2D/Dynamics/Joints/b2MouseJoint", "Box2D/Dynamics/Joints/b2PrismaticJoint", "Box2D/Dynamics/Joints/b2PulleyJoint", "Box2D/Dynamics/Joints/b2RevoluteJoint", "Box2D/Dynamics/Joints/b2RopeJoint", "Box2D/Dynamics/Joints/b2WeldJoint", "Box2D/Dynamics/Joints/b2WheelJoint", "Box2D/Particle/b2Particle", "Box2D/Particle/b2ParticleGroup", "Box2D/Particle/b2ParticleSystem", "Box2D/Rope/b2Rope"], function (exports_58, context_58) {
+System.register("Box2D/Box2D", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math", "Box2D/Common/b2Draw", "Box2D/Common/b2Timer", "Box2D/Common/b2GrowableStack", "Box2D/Common/b2BlockAllocator", "Box2D/Common/b2StackAllocator", "Box2D/Collision/b2Collision", "Box2D/Collision/b2Distance", "Box2D/Collision/b2BroadPhase", "Box2D/Collision/b2DynamicTree", "Box2D/Collision/b2TimeOfImpact", "Box2D/Collision/b2CollideCircle", "Box2D/Collision/b2CollidePolygon", "Box2D/Collision/b2CollideEdge", "Box2D/Collision/Shapes/b2Shape", "Box2D/Collision/Shapes/b2CircleShape", "Box2D/Collision/Shapes/b2PolygonShape", "Box2D/Collision/Shapes/b2EdgeShape", "Box2D/Collision/Shapes/b2ChainShape", "Box2D/Dynamics/b2Fixture", "Box2D/Dynamics/b2Body", "Box2D/Dynamics/b2World", "Box2D/Dynamics/b2WorldCallbacks", "Box2D/Dynamics/b2Island", "Box2D/Dynamics/b2TimeStep", "Box2D/Dynamics/b2ContactManager", "Box2D/Dynamics/Contacts/b2Contact", "Box2D/Dynamics/Contacts/b2ContactFactory", "Box2D/Dynamics/Contacts/b2ContactSolver", "Box2D/Dynamics/Contacts/b2CircleContact", "Box2D/Dynamics/Contacts/b2PolygonContact", "Box2D/Dynamics/Contacts/b2PolygonAndCircleContact", "Box2D/Dynamics/Contacts/b2EdgeAndCircleContact", "Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact", "Box2D/Dynamics/Contacts/b2ChainAndCircleContact", "Box2D/Dynamics/Contacts/b2ChainAndPolygonContact", "Box2D/Dynamics/Joints/b2Joint", "Box2D/Dynamics/Joints/b2JointFactory", "Box2D/Dynamics/Joints/b2AreaJoint", "Box2D/Dynamics/Joints/b2DistanceJoint", "Box2D/Dynamics/Joints/b2FrictionJoint", "Box2D/Dynamics/Joints/b2GearJoint", "Box2D/Dynamics/Joints/b2MotorJoint", "Box2D/Dynamics/Joints/b2MouseJoint", "Box2D/Dynamics/Joints/b2PrismaticJoint", "Box2D/Dynamics/Joints/b2PulleyJoint", "Box2D/Dynamics/Joints/b2RevoluteJoint", "Box2D/Dynamics/Joints/b2RopeJoint", "Box2D/Dynamics/Joints/b2WeldJoint", "Box2D/Dynamics/Joints/b2WheelJoint", "Box2D/Particle/b2Particle", "Box2D/Particle/b2ParticleGroup", "Box2D/Particle/b2ParticleSystem", "Box2D/Rope/b2Rope"], function (exports_59, context_59) {
     "use strict";
-    var __moduleName = context_58 && context_58.id;
+    var __moduleName = context_59 && context_59.id;
     function exportStar_1(m) {
         var exports = {};
         for (var n in m) {
             if (n !== "default") exports[n] = m[n];
         }
-        exports_58(exports);
+        exports_59(exports);
     }
     return {
         setters: [
@@ -17319,9 +17328,9 @@ System.register("Box2D/Box2D", ["Box2D/Common/b2Settings", "Box2D/Common/b2Math"
         }
     };
 });
-System.register("CollisionListener", ["App"], function (exports_59, context_59) {
+System.register("CollisionListener", ["App"], function (exports_60, context_60) {
     "use strict";
-    var __moduleName = context_59 && context_59.id;
+    var __moduleName = context_60 && context_60.id;
     var App_1, CollisionListener;
     return {
         setters: [
@@ -17364,13 +17373,13 @@ System.register("CollisionListener", ["App"], function (exports_59, context_59) 
                 };
                 return CollisionListener;
             }());
-            exports_59("CollisionListener", CollisionListener);
+            exports_60("CollisionListener", CollisionListener);
         }
     };
 });
-System.register("Box2DObject", ["Box2D/Box2D"], function (exports_60, context_60) {
+System.register("Box2DObject", ["Box2D/Box2D"], function (exports_61, context_61) {
     "use strict";
-    var __moduleName = context_60 && context_60.id;
+    var __moduleName = context_61 && context_61.id;
     var box2d, Box2DObject;
     return {
         setters: [
@@ -17412,13 +17421,13 @@ System.register("Box2DObject", ["Box2D/Box2D"], function (exports_60, context_60
                 };
                 return Box2DObject;
             }());
-            exports_60("Box2DObject", Box2DObject);
+            exports_61("Box2DObject", Box2DObject);
         }
     };
 });
-System.register("Player", ["Box2D/Box2D", "Box2DObject"], function (exports_61, context_61) {
+System.register("Player", ["Box2D/Box2D", "Box2DObject"], function (exports_62, context_62) {
     "use strict";
-    var __moduleName = context_61 && context_61.id;
+    var __moduleName = context_62 && context_62.id;
     var box2d, Box2DObject_1, Player;
     return {
         setters: [
@@ -17475,13 +17484,13 @@ System.register("Player", ["Box2D/Box2D", "Box2DObject"], function (exports_61, 
                 };
                 return Player;
             }(Box2DObject_1.Box2DObject));
-            exports_61("Player", Player);
+            exports_62("Player", Player);
         }
     };
 });
-System.register("Block", ["Box2D/Box2D", "Box2DObject"], function (exports_62, context_62) {
+System.register("Block", ["Box2D/Box2D", "Box2DObject"], function (exports_63, context_63) {
     "use strict";
-    var __moduleName = context_62 && context_62.id;
+    var __moduleName = context_63 && context_63.id;
     var box2d, Box2DObject_2, Block;
     return {
         setters: [
@@ -17507,13 +17516,13 @@ System.register("Block", ["Box2D/Box2D", "Box2DObject"], function (exports_62, c
                 };
                 return Block;
             }(Box2DObject_2.Box2DObject));
-            exports_62("Block", Block);
+            exports_63("Block", Block);
         }
     };
 });
-System.register("Enemy", ["Box2D/Box2D", "Box2DObject"], function (exports_63, context_63) {
+System.register("Enemy", ["Box2D/Box2D", "Box2DObject"], function (exports_64, context_64) {
     "use strict";
-    var __moduleName = context_63 && context_63.id;
+    var __moduleName = context_64 && context_64.id;
     var box2d, Box2DObject_3, Enemy;
     return {
         setters: [
@@ -17560,13 +17569,13 @@ System.register("Enemy", ["Box2D/Box2D", "Box2DObject"], function (exports_63, c
                 };
                 return Enemy;
             }(Box2DObject_3.Box2DObject));
-            exports_63("Enemy", Enemy);
+            exports_64("Enemy", Enemy);
         }
     };
 });
-System.register("EnemySpawnManager", ["Enemy"], function (exports_64, context_64) {
+System.register("EnemySpawnManager", ["Enemy"], function (exports_65, context_65) {
     "use strict";
-    var __moduleName = context_64 && context_64.id;
+    var __moduleName = context_65 && context_65.id;
     var Enemy_1, EnemySpawnManager;
     return {
         setters: [
@@ -17602,13 +17611,13 @@ System.register("EnemySpawnManager", ["Enemy"], function (exports_64, context_64
                 };
                 return EnemySpawnManager;
             }());
-            exports_64("EnemySpawnManager", EnemySpawnManager);
+            exports_65("EnemySpawnManager", EnemySpawnManager);
         }
     };
 });
-System.register("InputHandler", [], function (exports_65, context_65) {
+System.register("InputHandler", [], function (exports_66, context_66) {
     "use strict";
-    var __moduleName = context_65 && context_65.id;
+    var __moduleName = context_66 && context_66.id;
     var InputHandler;
     return {
         setters: [],
@@ -17644,13 +17653,13 @@ System.register("InputHandler", [], function (exports_65, context_65) {
                 };
                 return InputHandler;
             }());
-            exports_65("InputHandler", InputHandler);
+            exports_66("InputHandler", InputHandler);
         }
     };
 });
-System.register("Score", ["Screens/GameScreen"], function (exports_66, context_66) {
+System.register("Score", ["Screens/GameScreen"], function (exports_67, context_67) {
     "use strict";
-    var __moduleName = context_66 && context_66.id;
+    var __moduleName = context_67 && context_67.id;
     var GameScreen_1, Score;
     return {
         setters: [
@@ -17687,13 +17696,13 @@ System.register("Score", ["Screens/GameScreen"], function (exports_66, context_6
                 };
                 return Score;
             }());
-            exports_66("Score", Score);
+            exports_67("Score", Score);
         }
     };
 });
-System.register("Screens/GameScreen", ["CollisionListener", "Player", "Block", "EnemySpawnManager", "InputHandler", "Score", "Box2D/Box2D"], function (exports_67, context_67) {
+System.register("Screens/GameScreen", ["CollisionListener", "Player", "Block", "EnemySpawnManager", "InputHandler", "Score", "Box2D/Box2D"], function (exports_68, context_68) {
     "use strict";
-    var __moduleName = context_67 && context_67.id;
+    var __moduleName = context_68 && context_68.id;
     var CollisionListener_1, Player_1, Block_1, EnemySpawnManager_1, InputHandler_1, Score_1, box2d, GameScreen;
     return {
         setters: [
@@ -17829,13 +17838,13 @@ System.register("Screens/GameScreen", ["CollisionListener", "Player", "Block", "
             }());
             GameScreen.canvasWidth = 600;
             GameScreen.canvasHeight = 400;
-            exports_67("GameScreen", GameScreen);
+            exports_68("GameScreen", GameScreen);
         }
     };
 });
-System.register("Screens/StartScreen", ["Screens/GameScreen", "App"], function (exports_68, context_68) {
+System.register("Screens/StartScreen", ["Screens/GameScreen", "App"], function (exports_69, context_69) {
     "use strict";
-    var __moduleName = context_68 && context_68.id;
+    var __moduleName = context_69 && context_69.id;
     var GameScreen_2, App_2, StartScreen;
     return {
         setters: [
@@ -17852,7 +17861,8 @@ System.register("Screens/StartScreen", ["Screens/GameScreen", "App"], function (
                     var _this = this;
                     this._app = app;
                     document.addEventListener('keydown', function (e) {
-                        if (_this._app.activeScreen == App_2.Screens.START) {
+                        if (_this._app.activeScreen == _this) {
+                            console.log('9090');
                             if (e.keyCode == 32) {
                                 console.log();
                                 _this._app.SwitchScreen(App_2.Screens.GAME);
@@ -17883,21 +17893,18 @@ System.register("Screens/StartScreen", ["Screens/GameScreen", "App"], function (
                 };
                 return StartScreen;
             }());
-            exports_68("StartScreen", StartScreen);
+            exports_69("StartScreen", StartScreen);
         }
     };
 });
-System.register("Screens/EndScreen", ["Screens/GameScreen", "App"], function (exports_69, context_69) {
+System.register("Screens/EndScreen", ["Screens/GameScreen"], function (exports_70, context_70) {
     "use strict";
-    var __moduleName = context_69 && context_69.id;
-    var GameScreen_3, App_3, EndScreen;
+    var __moduleName = context_70 && context_70.id;
+    var GameScreen_3, EndScreen;
     return {
         setters: [
             function (GameScreen_3_1) {
                 GameScreen_3 = GameScreen_3_1;
-            },
-            function (App_3_1) {
-                App_3 = App_3_1;
             }
         ],
         execute: function () {
@@ -17906,7 +17913,7 @@ System.register("Screens/EndScreen", ["Screens/GameScreen", "App"], function (ex
                     var _this = this;
                     this._app = app;
                     document.addEventListener('keydown', function (e) {
-                        if (_this._app.activeScreen == App_3.Screens.END) {
+                        if (_this._app.activeScreen == _this) {
                             console.log(e.keyCode);
                             if (e.keyCode == 82) {
                                 location.reload();
@@ -17942,13 +17949,13 @@ System.register("Screens/EndScreen", ["Screens/GameScreen", "App"], function (ex
                 };
                 return EndScreen;
             }());
-            exports_69("EndScreen", EndScreen);
+            exports_70("EndScreen", EndScreen);
         }
     };
 });
-System.register("App", ["Screens/StartScreen", "Screens/GameScreen", "Screens/EndScreen"], function (exports_70, context_70) {
+System.register("App", ["Screens/StartScreen", "Screens/GameScreen", "Screens/EndScreen"], function (exports_71, context_71) {
     "use strict";
-    var __moduleName = context_70 && context_70.id;
+    var __moduleName = context_71 && context_71.id;
     var StartScreen_1, GameScreen_4, EndScreen_1, Screens, App;
     return {
         setters: [
@@ -17968,7 +17975,7 @@ System.register("App", ["Screens/StartScreen", "Screens/GameScreen", "Screens/En
                 Screens[Screens["GAME"] = 1] = "GAME";
                 Screens[Screens["END"] = 2] = "END";
             })(Screens || (Screens = {}));
-            exports_70("Screens", Screens);
+            exports_71("Screens", Screens);
             App = (function () {
                 function App() {
                     var _this = this;
@@ -17979,6 +17986,7 @@ System.register("App", ["Screens/StartScreen", "Screens/GameScreen", "Screens/En
                     this._endScreen = new EndScreen_1.EndScreen(this);
                     this.SwitchScreen(Screens.START);
                     requestAnimationFrame(function () { return _this.GameLoop(); });
+                    console.log('new gam123');
                 }
                 Object.defineProperty(App.prototype, "canvas", {
                     get: function () {
@@ -18009,26 +18017,26 @@ System.register("App", ["Screens/StartScreen", "Screens/GameScreen", "Screens/En
                     configurable: true
                 });
                 App.prototype.SwitchScreen = function (screen) {
-                    this._activeScreen = screen;
+                    switch (screen) {
+                        case Screens.START:
+                            this._activeScreen = this._startScreen;
+                            break;
+                        case Screens.GAME:
+                            this._activeScreen = this._gameScreen;
+                            break;
+                        case Screens.END:
+                            this._activeScreen = this._endScreen;
+                            break;
+                    }
                 };
                 App.prototype.GameLoop = function () {
                     var _this = this;
-                    switch (this._activeScreen) {
-                        case Screens.START:
-                            this._startScreen.Render();
-                            break;
-                        case Screens.GAME:
-                            this._gameScreen.Render();
-                            break;
-                        case Screens.END:
-                            this._endScreen.Render();
-                            break;
-                    }
+                    this._activeScreen.Render();
                     requestAnimationFrame(function () { return _this.GameLoop(); });
                 };
                 return App;
             }());
-            exports_70("App", App);
+            exports_71("App", App);
         }
     };
 });

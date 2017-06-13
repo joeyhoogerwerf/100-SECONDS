@@ -1,3 +1,4 @@
+import { IScreen } from "./Screens/IScreen";
 import { StartScreen } from "./Screens/StartScreen";
 import { GameScreen } from "./Screens/GameScreen";
 import { EndScreen } from "./Screens/EndScreen";
@@ -12,7 +13,7 @@ export class App {
     private _canvas: HTMLCanvasElement;
     private _mainCanvasContext: CanvasRenderingContext2D;
 
-    private _activeScreen:Screens;  
+    private _activeScreen:IScreen;  
     private _startScreen:StartScreen;
     private _gameScreen:GameScreen;
     private _endScreen:EndScreen;
@@ -28,6 +29,7 @@ export class App {
         this.SwitchScreen(Screens.START);
 
         requestAnimationFrame(() => this.GameLoop());
+        console.log('new gam123');
     }
 
     get canvas(): HTMLCanvasElement {
@@ -38,7 +40,7 @@ export class App {
         return this._mainCanvasContext;
     }
 
-    get activeScreen(): Screens {
+    get activeScreen(): IScreen {
         return this._activeScreen;
     }
 
@@ -47,23 +49,22 @@ export class App {
     }
 
     public SwitchScreen (screen:Screens) {
-        this._activeScreen = screen;
+        switch (screen) {
+            case Screens.START:
+                this._activeScreen = this._startScreen;
+                break;
+            case Screens.GAME:
+                this._activeScreen = this._gameScreen;
+                break;
+            case Screens.END:
+                this._activeScreen = this._endScreen;
+                break;
+        }
     }
 
     private GameLoop() {
         // console.log('app is runnin');
-        
-        switch (this._activeScreen) {
-            case Screens.START:
-                this._startScreen.Render();
-                break;
-            case Screens.GAME:
-                this._gameScreen.Render();
-                break;
-            case Screens.END:
-                this._endScreen.Render();
-                break;
-        }
+        this._activeScreen.Render();
 
         requestAnimationFrame(() => this.GameLoop());
     }

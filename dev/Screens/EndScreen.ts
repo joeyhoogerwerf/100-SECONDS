@@ -1,15 +1,16 @@
 import { App } from "./../App";
 import { GameScreen } from "./GameScreen";
+import { IScreen } from "./IScreen";
 import { Screens } from "./../App";
 
-export class EndScreen {
+export class EndScreen implements IScreen {
     private _app:App;
 
     constructor(app:App){
         this._app = app;
 
         document.addEventListener('keydown', (e:KeyboardEvent) => {
-            if (this._app.activeScreen == Screens.END) {
+            if (this._app.activeScreen == this) {
                 console.log(e.keyCode);
                 if (e.keyCode == 82) {
                     location.reload();

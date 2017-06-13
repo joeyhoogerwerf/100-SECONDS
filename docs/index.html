@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta id='viewport' name="viewport" content="width=device-width user-scalable=no maximum-scale=1, initial-scale=1"/>
+	<title>100 SECONDS</title>
+	<link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<canvas id="canvas" width="600" height="400" style="background-color:#990000;"></canvas>
+
+	<script src='js/system.js'></script>
+	<script src='js/main.js'></script>
+	<script>
+		System.import('App').then(function(module){
+			let g = new module.App();
+		})
+	</script>
+</body>
+</html>

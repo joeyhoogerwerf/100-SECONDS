@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'square';
+    src: url('../fonts/square-webfont.woff2') format('woff2'),
+         url('../fonts/square-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+    padding-top: 40px;
+}
+
+#canvas {
+    width: 600px;
+    margin: 0 auto;
+    display: block;
+    transform: scale(1, -1);
+}
+
+phone {
+	width:50px; min-height:92px;
+	background-image: url('../images/phone.png');
+}
+
+grain {
+	width:20px; min-height:24px;
+	background-image: url('../images/grain.png');
+}
+
+zombie {
+	width:67px; min-height:119px;
+	background-image: url('../images/zombie.png');
+}
+
+bird {
+    width:67px; height:110px;
+    background-image: url('../images/chickenwalking.gif');
+}
+
+ui {
+    font-size:42px;
+    text-shadow: 8px 8px 0px black;
+    color:white;
+    padding:20px;
+    width:100%;
+    text-align: center;
+}

@@ -11,7 +11,7 @@
 
 ### Klassendiagram
 
-![alt text](http://i.imgur.com/Vc2ai5i.png)
+![alt text](http://i.imgur.com/Dznw0tt.png)
 
 ### OOP principes
 

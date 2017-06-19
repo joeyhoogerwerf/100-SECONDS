@@ -3,7 +3,7 @@ import * as box2d from "./Box2D/Box2D";
 export class Box2DObject {
     protected world:box2d.b2World;
 
-    private width:number;
+    protected width:number;
 	protected height:number;
 
 	private position:box2d.b2Vec2;

@@ -30,3 +30,8 @@ Sommige classes in mijn game zijn opgebouwd uit meerdere instanties van andere c
 #### Inheritance
 
 Omdat in mijn game een aantal classes veel dezelfde functionaliteit hebben gebruik ik hiervoor inheritance. Op deze manier breng ik de gemeenschappelijk code onder in een superclass waar de subclasses uit erven. Op deze manier hoef ik maar één de code te schrijven en blijft mijn code schoner en efficiënter. Een voorbeeld is de class 'Box2DObject', hierin is alle functionaliteit geïmplementeerd om box2D bodies te genereren. Aangezien de classes 'Player', 'Enemy' en 'Block' allemaal box2D bodies zijn erven deze uit de class Box2DObject.
+
+### Future Improvements
+
+* Put enemies in an objectpool for better performance.
+* Create restart game functionallity instead of hard refresh.
